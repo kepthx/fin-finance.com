@@ -1,0 +1,7 @@
+{
+	"verbose": true,
+	"ext": "js,yml,yaml,json",
+	"ignore": ["test/*", "fixtures/*", "src/client/*", "public/*", "build/*", "nodemon.json"],
+	"quiet" : true,
+	"noColors": true
+}

@@ -1,0 +1,15 @@
+webpack:
+    output:
+        publicPath: /build/
+
+
+views:
+    cache: true
+
+
+
+email:
+    from: '"FINTECH NO REPLAY noreplay@westtrade.tk"'
+    to :
+        # contactsForm: 'me@westtrade.tk'
+        contactsForm: 'hello@fin-finance.com'

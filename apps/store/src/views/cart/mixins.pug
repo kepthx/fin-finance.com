@@ -1,0 +1,17 @@
+mixin cart_navigtaion(active_state=1)
+	.nav-private-office.opt2
+
+		ul.list-step
+
+			li(class=helpers.activeCartStep(active_state, 1)).list-step__item
+				span.list-step__title #{__('Shopping list')}
+				span.list-step__number 1
+
+
+			li(class=helpers.activeCartStep(active_state, 2)).list-step__item
+				span.list-step__title #{__('Placing an order')}
+				span.list-step__number 2
+
+			li(class=helpers.activeCartStep(active_state, 3)).list-step__item
+				span.list-step__title #{__('Checkout')}
+				span.list-step__number 3

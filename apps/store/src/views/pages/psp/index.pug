@@ -1,0 +1,90 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title  #{__('Assistance in obtaining')} #{__('Payment Service Provider (PSP) licenses')} | Fintech Finance
+
+block content
+	.content
+		.wrapper
+			h1.content-head_top
+				| #{__('Assistance in obtaining')}
+				br
+				| #{__('Payment Service Provider (PSP) licenses')}
+			.box-grid.opt3.clearfix
+				.box-grid__column.col50.col100-tablet2
+					.box-grid__item.item8.mh5
+						.box-grid__item-cont
+							.box-grid__top-line
+								h3.box-grid__title #{__('Ready-made company with a Payment Service Provider license')}
+								ul.text-list-grid.mini
+									li.text-list-grid__item #{__('one month of service')}
+									li.text-list-grid__item #{__('merchant account')}
+									li.text-list-grid__item #{__('bank account in the EU')}
+							.box-grid__line-ptice.long
+								ul.list-country
+									li.list-country__item
+										span.list-country__icon.icon1
+										span.list-country__name #{__('United Kingdom')} (#{__('full license')})
+										span.list-country__price € 140 000
+									li.list-country__item
+										span.list-country__icon.icon1
+										span.list-country__name #{__('United Kingdom')} (#{__('small license')})
+										span.list-country__price € 80 000
+									li.list-country__item
+										span.list-country__icon.icon2
+										span.list-country__name #{__('Czech Republic')} (#{__('full license')})
+										span.list-country__price € 120 000
+									li.list-country__item
+										span.list-country__icon.icon2
+										span.list-country__name #{__('Czech Republic')} (#{__('small license')})
+										span.list-country__price € 60 000
+									li.list-country__item
+										span.list-country__icon.icon3
+										span.list-country__name #{__('Georgia')} (#{__('full license')})
+										span.list-country__price € 20 000
+								a.button.mw2.white(href='/content/contacts.html') #{__('Contact to order')}
+
+
+
+
+				.box-grid__column.col50.col100-tablet2
+					.box-grid__item.item9.mh5
+						.box-grid__item-cont
+							.box-grid__top-line
+								h3.box-grid__title #{__('Creating a company with a Payment Service Provider license')}
+								ul.text-list-grid.mini
+									li.text-list-grid__item #{__('assistance in obtaining')}
+									li.text-list-grid__item #{__('legal advice')}
+							.box-grid__line-ptice.long
+								ul.list-country
+									li.list-country__item
+										span.list-country__icon.icon1
+										span.list-country__name #{__('United Kingdom')} (#{__('full license')})
+										span.list-country__price € 90 000
+									li.list-country__item
+										span.list-country__icon.icon1
+										span.list-country__name #{__('United Kingdom')} (#{__('small license')})
+										span.list-country__price € 60 000
+									li.list-country__item
+										span.list-country__icon.icon2
+										span.list-country__name #{__('Czech Republic')} (#{__('full license')})
+										span.list-country__price € 80 000
+									li.list-country__item
+										span.list-country__icon.icon2
+										span.list-country__name #{__('Czech Republic')} (#{__('small license')})
+										span.list-country__price € 40 000
+									li.list-country__item
+										span.list-country__icon.icon3
+										span.list-country__name #{__('Georgia')} (#{__('full license')})
+										span.list-country__price € 15 000
+								a.button.mw2.white(href='/content/contacts.html') #{__('Contact to order')}
+
+			if language.code == 'en'
+				include articles/en
+			else if language.code == 'es'
+				include articles/es
+			else if language.code == 'ru'
+				include articles/ru
+			else if language.code == 'de'
+				include articles/de

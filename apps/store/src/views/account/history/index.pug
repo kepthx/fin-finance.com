@@ -1,0 +1,56 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Personal account')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Personal account')}
+			include ../parts/nav
+
+			.box-form-private-office
+				.column-form.max-long
+					.box-form__cont
+						h2 #{__('Purchase history')}
+						unless purchase_history && purchase_history.data && purchase_history.data.length
+							span.empty-cart #{__('Your purchase history is empty') }
+
+					.box-history
+						if purchase_history && purchase_history.data && purchase_history.data.length
+							ul.table-history
+								li.tr
+									.th.col1 #{__('Number')}
+									.th.col2 #{__('Date')}
+									.th.col3 #{__('Name')}
+									.th.col4 #{__('Price')}
+									.th.col5 #{__('Status')}
+
+								li.tr
+									.td.col1
+										span.table-history__info 1
+									.td
+										span.table-history__info 01.06.2016
+									.td
+										a.table-history__title(href='#') #{__('KB Komercni Banka')}
+										p.table-history__sub-info #{__('Currencies')}: CZK, USD, EUR, RUB, GBP, CHF, JPY, CAD, SEK
+									.td
+										p.table-history__price € 1 100
+									.td
+										span.table-history__status #{__('Delivered')}
+
+								li.tr
+									.td.col1
+										span.table-history__info 2
+									.td
+										span.table-history__info 01.06.2016
+									.td
+										a.table-history__title(href='#') #{__('Registration of English LLP with two nominal partners and your name')}
+										p.table-history__sub-info #{__('Delivery of document in three days')}
+									.td
+										p.table-history__price € 1 100
+										p.table-history__shipping #{__('Free shipping')}
+									.td
+										span.table-history__status #{__('Delivered')}

@@ -1,0 +1,41 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Confirmation of registration</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+
+					<mj-image mj-class="logo" src="{{publicUrl}}/img/logo@2x.png"></mj-image>
+					<mj-text mj-class="h1">
+						Confirmation of registration
+					</mj-text>
+					<mj-text mj-class="h2">
+						Thank you for joining to Fintech Finance!
+					</mj-text>
+					<mj-text mj-class="secondary">
+						Please, click on the button or click on the link to complete the registration. Note that unconfirmed account will be deleted in 10 days
+					</mj-text>
+
+					<mj-button href="{{ confirmationLink  }}" mj-class="button">
+						Confirm
+					</mj-button>
+					<mj-spacer height="20" />
+
+					<mj-text mj-class="secondary">
+						If the link doesn’t open, copy it into your browser
+					</mj-text>
+
+					<mj-text mj-class="link">
+						{{ confirmationLink  }}
+					</mj-text>
+
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

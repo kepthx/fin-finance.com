@@ -1,0 +1,25 @@
+
+@font-face {
+	font-family:'ProximaNova';
+	src: url('ProximaNova-Regular.eot');
+	src: url('ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+		url('ProximaNova-Regular.woff') format('woff'),
+		url('ProximaNova-Regular.ttf') format('truetype'),
+		url('ProximaNova-Regular.svg#ProximaNova') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-FB04;
+}
+@font-face {
+	font-family:'ProximaNova';
+	src: url('ProximaNova-Bold.eot');
+	src: url('ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+		url('ProximaNova-Bold.woff') format('woff'),
+		url('ProximaNova-Bold.ttf') format('truetype'),
+		url('ProximaNova-Bold.svg#ProximaNova') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-FB04;
+}

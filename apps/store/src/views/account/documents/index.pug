@@ -1,0 +1,34 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Personal account')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Personal account')}
+
+			include ../parts/nav
+
+			.box-form-private-office
+				form(name="personal-account-documents-form", id="personal-account-documents-form", action="/user/account/documents.html", method="post").column-form
+					.box-form__cont
+						h2 #{__('Edit personal details')}
+
+						.line-fields
+
+							.box-field.w50.hide-mobile
+								label #{__('First name')}
+								.box-field__input
+									input.standart-input(type='text', class=forms.documents.errors.first ? 'error' : '', placeholder='', name="first")
+
+
+						if forms.documents.errors && Object.keys(forms.documents.errors).length
+							.worning-form
+								each error in forms.documents.errors
+									p #{__(error)}
+
+						.line-buttons-form
+							input.button.button_form(type='submit', value=__('Save'))

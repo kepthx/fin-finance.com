@@ -1,0 +1,23 @@
+//- body(class=language.code + ' ' + page_class).loaded
+unless cookiesEnabled
+	.cookies-message
+		.wrapper  This website uses cookies to ensure you get the best experience on our website.
+			.to-right
+				a(href="/cookies/enable").cookie-agree Got it
+				//- a(href="/cookies/disable").deny x
+
+.main-wrapper
+	include parts/header.pug
+	//- pre
+	//- 	| !{ helpers.stringify(language) }
+	// BEGIN CONTENT
+
+
+	block content
+		h1 Main
+	// CONTENT EOF
+
+	include parts/footer.pug
+
+block modal
+.icon-load

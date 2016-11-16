@@ -1,0 +1,107 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title  #{__('Log in')}. #{__('Create account')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1
+				| #{__('Log in')}.&nbsp;
+				span.nowrap #{__('Create account')}
+
+
+			.box-form-reg
+				form(role="form", name='auth-form', id='auth-form', action=helpers.url('user.account.login'), method="POST").column-form
+					input(type="hidden", name="form_id", value=forms.authorization.id)
+
+					.box-form__cont
+						h3 #{__('Not new to our store?')}
+
+						.box-field
+							label #{__('Login~')}
+							.box-field__input
+								input.standart-input(type='text', value=forms.authorization.data.login, class=forms.authorization.errors.login ? 'error' : '', placeholder='', name='login', id='input-login')
+
+						.box-field
+							label #{__('Password')}
+							.box-field__input
+								input.standart-input(type='password', class=forms.authorization.errors.password ? 'error' : '', placeholder='', name='password', id='input-password')
+
+
+						.box-field.popup-list
+							.box-field__input
+								input.checkbox_popup.styled(type='checkbox', name='remember_me', id='remember_me_field')
+								label(for="remember_me_field") #{__('Remember Me')}
+
+						.line-buttons-form
+							input.button.button_form(type='submit', value=__('Login'))
+							a.button.button_password(href='/user/recovery.html') #{__('Recovery password')}
+
+						if forms.authorization.errors && Object.keys(forms.authorization.errors).length
+							.worning-form
+								each error in forms.authorization.errors
+									p #{ __(error) }
+
+
+
+				form(action=helpers.url('user.account.login'), method="POST", name="registration-form", id="registration-form").column-form.column-form_pad-mobile
+					input(type="hidden", name="form_id", value=forms.registration.id)
+
+
+					.box-form__cont
+						h3 #{__('New to our site?')}
+						.line-fields
+
+							.box-field.w50.hide-mobile
+								label #{__('First name')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='', name="first", value=forms.registration.data.first, class=forms.registration.errors.first ? 'error' : '', id='input-first')
+
+							.box-field.w50.hide-mobile
+								label #{__('Last name')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='', name="last", value=forms.registration.data.last, class=forms.registration.errors.last ? 'error' : '', id='input-last')
+
+
+						.box-field.open-mobile
+							label #{__('First name')}, #{__('Last name')}
+							.box-field__input
+								input.standart-input(type='text', placeholder='', name="first_last", value=forms.registration.data.first_last, class=forms.registration.errors.first_last ? 'error' : '', id='input-first-last')
+
+
+						.box-field
+							label #{__('E-mail')}*
+							.box-field__input
+								input.standart-input(type='text', placeholder='', name="email", value=forms.registration.data.email, class=forms.registration.errors.email ? 'error' : '', id='input-email')
+
+
+						.box-field
+							label #{__('Phone')}*
+							.box-field__input
+								input.standart-input(type='text', placeholder='', name="phone", value=forms.registration.data.phone, class=forms.registration.errors.phone ? 'error' : '', id='input-phone')
+
+
+						.line-fields
+
+							.box-field.w50
+								label #{__('Password')}*
+								.box-field__input
+									input.standart-input(type='password', placeholder='', name="password", value=forms.registration.data.password, class=forms.registration.errors.password ? 'error' : '', id='input-password')
+
+
+							.box-field.w50
+								label #{__('Confirm password')}*
+								.box-field__input
+									input.standart-input(type='password', placeholder='', name="confirm", value=forms.registration.data.confirm, class=forms.registration.errors.confirm ? 'error' : '', id='input-confirm')
+
+						.line-buttons-form
+							input.button.button_form(type='submit', value=__('Create new account'))
+
+						.worning-form
+							p #{ __('Fields marked with an sterisk are required') }
+							if forms.registration.errors && Object.keys(forms.registration.errors).length
+								each error in forms.registration.errors
+									p #{ __(error) }

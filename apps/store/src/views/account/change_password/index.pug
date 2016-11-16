@@ -1,0 +1,44 @@
+//- index.pug
+extends ../../layout.pug
+include ../../mixins/index.pug
+
+
+block title
+	title  #{__('Personal account')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Personal account')}
+			include ../parts/nav
+
+			.box-form-private-office
+				+form('change_password')(action="/user/account/change-password.html", method="POST").column-form
+					.box-form__cont
+						h2 #{__('Change password')}
+
+
+						if forms.change_password.data.reset_token
+							input(type="hidden", name="reset_token", value=forms.change_password.data.reset_token)
+						else
+							.box-field
+								label #{__('Old password')}
+								.box-field__input
+									input.standart-input(type='password', class=forms.change_password.errors.old_password ? 'error' : '', placeholder='', name="old_password")
+
+
+						.box-field
+							label #{__('New password')}
+							.box-field__input
+								input.standart-input(type='password', class=forms.change_password.errors.password ? 'error' : '', placeholder='', name="password")
+
+						.box-field
+							label #{__('Confirm password')}
+							.box-field__input
+								input.standart-input(type='password', class=forms.change_password.errors.confirm ? 'error' : '', placeholder='', name="confirm")
+
+						+form_errors(forms.change_password)
+
+						.line-buttons-form
+							input.button.button_form(type='submit', value=__('Apply'))

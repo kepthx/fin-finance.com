@@ -1,0 +1,18 @@
+//- index.pug
+extends ../layout.pug
+include mixins
+block title
+	title #{__('Shopping cart')} | Fintech Finanace
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Shopping cart')}
+
+			+cart_navigtaion(3)
+			.box-form-private-office
+				.column-form.max-long
+					.box-form__cont
+						h3.box-form-private-office__title #{__('Payment successfully made')}
+						p.box-form-private-office__text-ok
+							| #{__('You will be contacted by a specialist from our company for further details within 40 minutes')}

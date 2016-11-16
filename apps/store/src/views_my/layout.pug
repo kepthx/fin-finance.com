@@ -1,0 +1,107 @@
+//- layout.pug
+doctype html
+html(ng-app="fintech.store.front")
+
+	head
+		meta(charset="utf-8")
+		block title
+			title Default title
+
+		link(rel="stylesheet", href="/build/style/front.css", attr)
+		script(src="/build/front.bundle.js")
+
+	body
+		header#top.vcard
+			figure.logo
+				a(href="/index.html", role="banner", title=__("Homepage"))
+					img(src="/img/logo.png", alt=__("FintechFinance logo"))
+				figcaption.fn.org FintechFinance
+
+			p.slogan !{__("Licensing of financial companies<br>Sale of ready-made companies<br>Legal support")}
+
+			address
+				a(href="tel:+420 228 823 41").tel +420 228 823 41
+				span.workhours !{__("Mon-Fri 8am-6pm EET")}
+
+			nav
+				.item
+					div(class=language.code).circled.en.button= language.short
+					.dropdown
+						each langInfo, langKey in languages
+							a(href=helpers.languageLink(langKey)).item
+								span(class=langKey).circled.en.button= langInfo.short
+								= langInfo.label
+
+
+
+				a(href="/user/cart.html", basket).circled.button
+					span.icon.lnr.lnr-cart
+					span(class=basket.items.length ? 'red' : 'grey').badge= basket.items.length
+
+				a(href="/user/login.html").button.icon
+					| #{__("Login")}
+					span.icon.lnr.lnr-enter
+
+		.divider
+
+		nav#primary
+			.item
+				a(href="/", class="") !{__("License")}
+				.dropdown
+					a(href="").item Test
+
+			.item
+				a(href="/", class="") !{__("Our service")}
+				.dropdown
+					a(href="").item Test
+
+			.item
+				a(href="/", class="") !{__("Special offers")}
+				.dropdown
+					a(href="").item Test
+
+			.item
+				a(href="/", class="") !{__("FAQ")}
+				.dropdown
+					a(href="").item Test
+
+			.item
+				a(href="/", class="") !{__("Contacts")}
+				.dropdown
+					a(href="").item Test
+
+		main
+			block content
+
+
+
+		footer.region.gray
+
+			.information
+				figure.logo
+
+					a(href="/index.html", role="banner", title=__("Homepage"))
+						img(src="/img/logo_footer.png", alt=__("FintechFinance logo"))
+
+					figcaption.fn.org FintechFinance
+
+					p.slogan !{__("Licensing of financial companies<br>Sale of ready-made companies<br>Legal support")}
+
+				nav
+					.column
+						a(href="/site/privacy_policy.html").item Privacy Policy
+						a(href="/site/terms_of_buisness.html").item Terms of Buisness
+						a(href="/site/terms_of_use.html").item Terms of Use
+
+					.column
+						a(href="/site/contacts.html").item Contacts
+
+				.payments
+					img(src="/img/payments.png")
+
+			.divider
+
+			.copyright
+				| &copy; 2016 Bizstars s.r.o. All rights reserved. Fintech Finance and the Fintech Finance Logo
+				br
+				| are registered trademarks of the Bizstars s.r.o.

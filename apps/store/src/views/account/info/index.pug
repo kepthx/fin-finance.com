@@ -1,0 +1,56 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Personal account')} | Fintech Finanace
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Personal account')}
+			include ../parts/nav
+
+			.box-form-private-office
+				.column-form.max-long
+					.box-form__cont
+						if userInfo.activationToken && !confirmed
+							.worning-form.opt2
+								p
+									| #{__('Please, check your email and complete the registrations')}&nbsp;
+									| #{__('Note that unconfirmed account will be deleted in 10 days')}
+									br
+									br
+									a(href=helpers.url('user.account.resend-confirmation')) #{__('Resend confirmation email')}
+
+
+						if isConfirmed
+							.worning-form.opt3
+								p #{__('Congratulations! You have confirmed registration')}
+
+
+
+						h2 #{__('Personal details~')}
+						.box-info-user
+							if userInfo.profile.first
+
+								.box-info-user__item
+									p.box-info-user__label #{__('First name')}
+									p.box-info-user__info= userInfo.profile.first
+
+							if userInfo.profile.last
+								.box-info-user__item
+									p.box-info-user__label #{__('Last name')}
+									a.link-mail(href='#')= userInfo.profile.last
+
+
+							.box-info-user__item.top2
+								p.box-info-user__label #{__('Email')}
+								p.box-contacts__address= userInfo.email
+
+
+							.box-info-user__item.top2
+								p.box-info-user__label #{__('Phone')}
+								p.box-contacts__address= userInfo.profile.phone
+							.line-buttons-form.top
+								a.button.button_form.opt2(href='/user/account/edit.html') #{__('Edit details')}
+								a.button.button_form.opt2(href='/user/account/change-password.html') #{__('Change password')}

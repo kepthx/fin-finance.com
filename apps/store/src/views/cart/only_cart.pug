@@ -1,0 +1,64 @@
+include mixins
+
+
+unless basket.items.length
+	//- h1 #{__('Your shopping cart is empty')}
+	h1 #{__('Shopping cart')}
+	.text-page.short #{__('Your shopping cart is empty')}, &nbsp;
+		a(href='/') #{__('Return to shopping')}.
+
+
+
+if basket.items.length
+
+	h1 #{__('Shopping cart')}
+	+cart_navigtaion(1)
+
+	form(action='/user/cart/order_placing.html', method="POST").box-form-private-office.opt3
+		.box-history.opt2
+
+			ul.table-history
+				li.tr
+					if language.code === 'de'
+						.th.col3 Name
+					else
+						.th.col3 #{__('Name')}
+
+					.th.col6 #{__('Price')}
+					.th.col5 #{__('Remove')}
+
+				each item in basket.items
+					li.tr(data-cart-item=item.id)
+						.td
+							a.table-history__title(href='#')= item.title
+							p.table-history__sub-info= item.description
+
+						.td
+							p.table-history__price #{ helpers.formatPriceItem(item) }
+							if item.shipping
+								p.table-history__shipping= item.shipping
+
+
+						.td
+							a.remove-from-cart.box-history__delete(data-item-id=item.id, href=helpers.url('user.cart.remove', item.id)) #{__('Delete')}
+
+
+
+
+			if user
+				.line-total-form.opt2
+					p.line-total-form__price
+						| #{__('Total:')}
+						span= helpers.formatPrice(basket.total)
+					input.button.button_form.size3(type='submit', value=__('Checkout'))
+			else
+				.line-total-form.opt2
+					p.line-total-form__price
+						| #{__('Total:')}
+						span= helpers.formatPrice(basket.total)
+
+					input.button.size2(type='submit', value=__('Express execution'), placeholder='')
+					a.button.button_form.opt3(href='/user/login.html') #{__('Execution with authorization*')}
+
+
+				p.box-history__help * #{__('Ability to view order status, shipping location and purchase history')}

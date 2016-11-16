@@ -1,0 +1,42 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Новое сообщение из формы контактов</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+
+					<mj-image mj-class="logo" src="{{publicUrl}}/img/logo@2x.png"></mj-image>
+
+
+					<mj-text mj-class="h1">Новое сообщение из формы контактов</mj-text>
+					<mj-text mj-class="h2">Детали</mj-text>
+
+					<mj-text mj-class="label">Имя</mj-text>
+					<mj-text mj-class="bold">{{ fullName }}</mj-text>
+
+					<mj-text mj-class="label">E-Mail</mj-text>
+					<mj-text mj-class="bold">{{ email }}</mj-text>
+
+					<mj-text mj-class="label">Телефон</mj-text>
+					<mj-text mj-class="bold">{{ phone }}</mj-text>
+
+					<mj-text mj-class="label">Тема сообщения</mj-text>
+					<mj-text mj-class="bold">{{ theme }}</mj-text>
+
+					<mj-text mj-class="label">Текст сообщения</mj-text>
+					<mj-text mj-class="bold">{{ text }}</mj-text>
+
+					<mj-text mj-class="label">IP адрес</mj-text>
+					<mj-text mj-class="bold">{{ ip }}</mj-text>
+
+					<mj-text mj-class="label">Язык пользователя</mj-text>
+					<mj-text mj-class="bold">{{ userLanguage }}</mj-text>
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

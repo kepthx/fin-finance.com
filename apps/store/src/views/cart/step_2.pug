@@ -1,0 +1,124 @@
+//- index.pug
+extends ../layout.pug
+include mixins
+block title
+	title #{__('Shopping cart')} | Fintech Finanace
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Shopping cart')}
+
+			+cart_navigtaion(2)
+
+			.box-form-private-office.opt2
+				form(method='POST', action='/user/cart/checkout.html').form-basket
+
+					if user
+						.form-basket__column
+							h3 Personal details
+							.box-info-user.for-form
+								.box-info-user__item
+									p.box-info-user__label First name
+									p.box-info-user__info= user.profile.first
+								.box-info-user__item
+									p.box-info-user__label Last name
+									a.link-mail(href='#')= user.profile.last
+								.box-info-user__item
+									p.box-info-user__label Email
+									p.box-contacts__address= user.profile.email
+								.box-info-user__item
+									p.box-info-user__label Phone
+									p.box-contacts__address= user.profile.phone
+
+					else
+						.form-basket__column
+							h3 #{__('Personal details')}
+							.line-fields
+								.box-field.w50
+									label #{__('First name')}
+									.box-field__input
+										input.standart-input(type='text', placeholder='')
+								.box-field.w50.hide-mobile
+									label #{__('Last name')}
+									.box-field__input
+										input.standart-input(type='text', placeholder='')
+							.box-field
+								label #{__('E-mail')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+							.box-field
+								label #{__('Phone')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+
+
+
+					.form-basket__column
+						h3 #{__('Card details')}
+						.box-field.h2
+							ul.list-radio.for-payment
+								li.list-radio__item
+									label
+										input.js-styled(type='radio', name='group1', checked='')
+										span.list-radio__icon
+											img(src='/img/icon_payment_form_1.png?ver1.0', alt='')
+								li.list-radio__item
+									label
+										input.js-styled(type='radio', name='group1', checked='')
+										span.list-radio__icon
+											img(src='/img/icon_payment_form_2.png?ver1.0', alt='')
+								li.list-radio__item
+									label
+										input.js-styled(type='radio', name='group1', checked='')
+										span.list-radio__icon
+											img(src='/img/icon_payment_form_3.png?ver1.0', alt='')
+						.box-field
+							label #{__('Name on card*')}
+							.box-field__input
+								input.standart-input(type='text', placeholder='')
+						.box-field
+							label #{__('Card number*')}
+							.box-field__input
+								input.standart-input(type='text', placeholder='')
+						.line-fields
+							.box-field.w33.hide-mobile
+								label.two-line-label #{__('Сard expiration Month')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+							.box-field.w33.hide-mobile
+								label #{__('Year')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+							.box-field.w33.open-mobile-50
+								label.two-line-label #{__('Validity')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+							.box-field.w33
+								label #{__('CVV')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+					.box-form-gray
+
+						h3 #{__('Shipping address')}
+						.line-fields
+							.box-field.w23
+								label #{__('Country')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+							.box-field.w23
+								label #{__('City')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+							.box-field.w53
+								label #{__('Address')}
+								.box-field__input
+									input.standart-input(type='text', placeholder='')
+					.line-total-form
+
+						p.line-total-form__price
+							| #{__('Total:')}
+							span= helpers.formatPrice(basket.total)
+
+						a.button.button_form.button_gray(href='/user/cart.html') #{__('Cancel')}
+						input.button.button_form(type='submit', value=__('Next'))

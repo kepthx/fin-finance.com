@@ -1,0 +1,29 @@
+//- index.pug
+extends ../../layout.pug
+include ../../mixins/index.pug
+
+block title
+	title  #{__('Request password')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Request password')}
+
+			unless forms.recovery.has_message
+				.form-edit-password
+					+form("recovery")(method="POST", action="/user/recovery.html").column-form.long
+						.box-form__cont
+							.box-field
+								label #{__('E-mail')}
+								.box-field__input
+									input.standart-input(type='text', name="email")
+
+							.line-buttons-form
+								input.button.button_form.button_size2(type='submit', value=__('Request'))
+
+							+form_errors(forms.recovery)
+			else
+				.small-text.text-page.short #{__('We\'ve sent an email to %s. Click the link in the email to reset your password. If you don\'t see the email, check other places it might be, like your junk, spam, social, or other folders.', forms.recovery.safe_email)} &nbsp;
+					a(href=helpers.url('front')) #{__('Return to home')}.

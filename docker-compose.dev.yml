@@ -1,0 +1,81 @@
+version : '2'
+services :
+
+    web_app:
+
+        ports:
+            # - localhost:3030:3030
+            - localhost:3031:3031
+            - localhost:3032:3032
+            - localhost:3001:3001
+
+        volumes:
+            - './apps/store:/node_app/src'
+            - build-data:/node_app/src/build
+            - node-modules:/node_app/src/node_modules
+
+        ports:
+            - 3030:3030
+            - 5858:5858
+            - 8080:8080
+            - 9292:9292
+
+
+
+
+        # environment:
+        #     - DEBUG=koa-generic-session:session,cookies,koa-generic-session:store
+            # - /node_app/src/node_modules
+            # - /node_app/src/public
+
+            # - /node_app/src/public
+            # - './apps/store/node_modules:/fintech_store/src/node_modules'
+            # - './apps/store/public/build:/fintech_store/src/public/build'
+
+
+
+    rethinkdb:
+        ports:
+            - '8085:8080'
+
+    # redis:
+    #     ports:
+    #         - '6379:6379'
+
+    # redmon:
+    #     image: vieux/redmon
+    #     # build: ./redmon
+    #     # image: redmon
+    #     depends_on:
+    #         - redis
+    #     links:
+    #         - 'redis:redisserver'
+    #
+    #     ports:
+    #         - '4567:4567'
+    #
+    #     entrypoint: "redmon -r redis://redisserver:6379"
+
+
+
+    # redmon:
+    #     image: vieux/redmon
+    #     # build: ./redmon
+    #     # image: redmon
+    #     depends_on:
+    #         - redis
+    #     links:
+    #         - 'redis:redisserver'
+    #     ports:
+    #         - '4567:4567'
+    #
+    #     entrypoint: "redmon -r redis://redisserver:6379"
+    #
+    #
+    # redis:
+    #     image: redis:3.2.3-alpine
+    #     restart: always
+    #     ports:
+    #         - '6379:6379'
+    #     volumes:
+    #         - './docker-data/data/redis:/data'

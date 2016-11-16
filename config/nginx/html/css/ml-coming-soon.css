@@ -1,0 +1,186 @@
+/*
+
+Coming Soon Template by MediaLoot
+URL: http://medialoot.com/item/free-coming-soon-template
+
+Designer: Tony Thomas
+
+*/
+
+html, body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-image: url(../images/bg-1.jpg);
+	background-color: #5b6e38;
+	margin: 0; padding: 0;
+	height: 100%;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,.5);
+}
+
+::selection {
+	background: rgba(0,0,0,0.25);
+}
+
+.noise {
+	width: 100%;
+	min-height: 100%;
+	background: url(../images/noise.png) repeat;
+	position: relative;
+}
+
+.logo {
+	top: -60px;
+	position: absolute;
+	left: 25%;
+}
+
+.content {
+	width: 958px;
+	margin: 0 auto;
+	padding: 1px;
+}
+
+h1 {
+	font-family: "league_gothicregular";
+	font-size: 60px;
+	text-transform: uppercase;
+	color: #000;
+	color: rgba(0,0,0,0.6);
+	text-shadow: 0 1px rgba(255,255,255,.1);
+	height:98px;
+	line-height: 1.9;
+	display: inline-block;
+	text-align: center;
+	margin: 100px auto 20px;
+	width: 960px;
+}
+
+h1 span {
+	background: url(../images/h1-bg.png) repeat-x;
+	height:98px;
+	display: inline-block;
+}
+
+p {
+	text-align: center;
+	width: 640px;
+	margin: 20px auto;
+	line-height: 1.9;
+}
+
+ul {
+	margin: 60px auto;
+	width: 300px;
+	height: 100px;
+	display: block;
+}
+
+ul li {
+	display: inline-block;
+	float: left;
+	width: 60px;
+	text-align: center;
+	font-family: "league_gothicregular";
+	text-transform: uppercase;
+	color: #000;
+	font-size: 16px;
+	color: rgba(0,0,0,0.6);
+	text-shadow: 0 1px rgba(255,255,255,.1);
+}
+ ul li span {
+ 	display: block;
+ 	font-size: 47px;
+ 	color: #fff;
+ 	text-shadow: 0 1px 3px rgba(0,0,0,.35);
+ }
+
+form {
+	width: 450px;
+	margin: 20px auto;
+}
+
+form input[type=text] {
+	width: 300px;
+	height: 46px;
+	border: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 1px rgba(255,255,255,.25), inset 0 1px 3px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 1px rgba(255,255,255,.25), inset 0 1px 3px rgba(0,0,0,.5);
+	box-shadow: 0 1px rgba(255,255,255,.25), inset 0 1px 3px rgba(0,0,0,.5);
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	color: rgba(255,255,255,0.8);
+	text-shadow: 0 1px rgba(0,0,0,.5);
+	padding-left: 20px;
+}
+
+form input[type=text]:focus {
+	outline: none;
+	color: #fff;
+	-webkit-box-shadow: 0 0 15px rgba(255,255,255,.25), inset 0 1px 3px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 15px rgba(255,255,255,.25), inset 0 1px 3px rgba(0,0,0,.5);
+	box-shadow: 0 0 15px rgba(255,255,255,.25), inset 0 0px 0px 2px #fff;
+}
+
+form input[type=button], form input[type=submit] {
+	width: 120px;
+	height: 48px;
+	border: none;
+	cursor: pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: rgba(0,0,0,.6);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px rgba(0,0,0,.5);
+}
+
+form input[type=button]:hover, form input[type=submit]:hover {
+	background-color: rgba(0,0,0,.5);
+}
+
+form input[type=button]:active, form input[type=submit]:active {
+	background-color: rgba(0,0,0,.7);
+}
+
+footer {
+	background: #fff;
+	height: 200px;
+	min-width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+footer .content {
+	color: #333;
+	text-shadow: none;
+}
+
+footer .social {
+	border-bottom: 2px solid #e7e7e7;
+	margin: 20px 0 0 0;
+	padding: 20px 0;
+}
+
+footer .left {
+	width: 40%;
+	float: left;
+	text-align: left;
+}
+
+footer .right {
+	width: 40%;
+	float: right;
+	text-align: right;
+}

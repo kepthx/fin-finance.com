@@ -1,0 +1,43 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Registro completado!</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+
+					<mj-image mj-class="logo" src="{{publicUrl}}/img/logo@2x.png"></mj-image>
+					<mj-text mj-class="h1">Registro completado!</mj-text>
+					<mj-text mj-class="h2">Detalles del registro</mj-text>
+
+					<mj-text mj-class="label">Login</mj-text>
+					<mj-text mj-class="bold">{{ email }}</mj-text>
+
+					<mj-text  mj-class="label">Contraseña</mj-text>
+					<mj-text  mj-class="bold">{{ password }}</mj-text>
+
+					<mj-spacer height="50" />
+
+					<mj-text mj-class="h2">Datos personales</mj-text>
+
+					<mj-text mj-class="label">Nombre</mj-text>
+					<mj-text  mj-class="bold">{{ account.first }}</mj-text>
+
+					<mj-text mj-class="label">Last name</mj-text>
+					<mj-text  mj-class="bold">{{ account.last }}</mj-text>
+
+					<mj-text mj-class="label">Email</mj-text>
+					<mj-text  mj-class="bold">{{ account.email }}</mj-text>
+
+					<mj-text mj-class="label">Teléfono</mj-text>
+					<mj-text  mj-class="bold"> {{ account.phone }} </mj-text>
+
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

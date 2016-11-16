@@ -1,0 +1,70 @@
+<mj-spacer height="100" />
+
+
+{{#ifc language 'en'}}
+
+<mj-text color="#9a9999" font-size="18px" line-height="26px" font-family="ProximaNova, Helvetica">
+	If you have any questions please contact for number
+</mj-text>
+<mj-text mj-class="phone">
+	<a href="tel:+420 228 823 41" style="color: black; font-size: 24px; line-height: 24px; font-weight: bold; text-decoration: none;">
+	+420 228 823 41
+  </a>
+</mj-text>
+<mj-text font-size="13px" color="#b91516" line-height="26px" font-family="ProximaNova, Helvetica">
+	Letter generated automatically and does not require an answer. *
+</mj-text>
+{{/ifc}}
+
+{{#ifc language 'ru'}}
+
+
+<mj-text color="#9a9999" font-size="17px" line-height="26px" font-family="ProximaNova, Helvetica">
+	Если у вас есть какие-либо вопросы, пожалуйста, обращайтесь за номером
+</mj-text>
+
+<mj-text  mj-class="phone">
+	<a href="tel:+420 228 823 41" style="color: black; font-size: 24px; line-height: 24px; font-weight: bold; text-decoration: none;">
+	+420 228 823 41
+  </a>
+</mj-text>
+
+<mj-text font-size="13px" color="#b91516" line-height="26px">
+	Письмо сформировано автоматически и не требует ответа. *
+</mj-text>
+{{/ifc}}
+
+{{#ifc language 'es'}}
+
+<mj-text color="#9a9999" font-size="17px" line-height="26px">
+	Si tiene algunas preguntas, contacte, por favor, por el número
+</mj-text>
+
+<mj-text  mj-class="phone">
+	<a href="tel:+420 228 823 41" style="color: black; font-size: 24px; line-height: 24px; font-weight: bold; text-decoration: none;">
+	+420 228 823 41
+  </a>
+</mj-text>
+
+<mj-text font-size="13px" color="#b91516" line-height="26px">
+	Carta genera automáticamente y no requiere una respuesta.
+</mj-text>
+{{/ifc}}
+
+{{#ifc language 'de'}}
+
+<mj-text color="#9a9999" font-size="17px" line-height="26px">
+	Für weitere Informationen oder Fragen stehen wir Ihnen gerne zur Verfügung unter:
+</mj-text>
+
+<mj-text  mj-class="phone">
+	<a href="tel:+420 228 823 41" style="color: black; font-size: 24px; line-height: 24px; font-weight: bold; text-decoration: none;">
+	+420 228 823 41
+  </a>
+</mj-text>
+
+
+<mj-text font-size="13px" color="#b91516" line-height="26px">
+	Schreiben automatisch generiert und keine Antwort erfordern. *
+</mj-text>
+{{/ifc}}

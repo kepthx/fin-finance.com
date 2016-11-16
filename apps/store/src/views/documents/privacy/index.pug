@@ -1,0 +1,19 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Privacy Policy')} | Fintech Finance
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Privacy Policy')}
+
+			if language.code == 'en'
+				include langs/en
+			else if language.code == 'es'
+				include langs/es
+			else if language.code == 'ru'
+				include langs/ru
+			else if language.code == 'de'
+				include langs/de

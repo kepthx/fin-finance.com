@@ -1,0 +1,65 @@
+//- layout.pug
+doctype html
+html(ng-app="fintech.store.front", lang=language.code)
+
+head
+	meta(charset="utf-8")
+	meta(name="format-detection", content="telephone=no")
+	meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1")
+
+
+
+	link(rel="apple-touch-icon", sizes="57x57", href="/apple-touch-icon-57x57.png")
+	link(rel="apple-touch-icon", sizes="60x60", href="/apple-touch-icon-60x60.png")
+	link(rel="apple-touch-icon", sizes="72x72", href="/apple-touch-icon-72x72.png")
+	link(rel="apple-touch-icon", sizes="76x76", href="/apple-touch-icon-76x76.png")
+	link(rel="apple-touch-icon", sizes="114x114", href="/apple-touch-icon-114x114.png")
+	link(rel="apple-touch-icon", sizes="120x120", href="/apple-touch-icon-120x120.png")
+	link(rel="apple-touch-icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
+	link(rel="apple-touch-icon", sizes="152x152", href="/apple-touch-icon-152x152.png")
+	link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon-180x180.png")
+	link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+	link(rel="icon", type="image/png", href="/favicon-194x194.png", sizes="194x194")
+	link(rel="icon", type="image/png", href="/android-chrome-192x192.png", sizes="192x192")
+	link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+	link(rel="manifest", href="/manifest.json")
+	link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#cc0607")
+	meta(name="msapplication-TileColor", content="#b91d47")
+	meta(name="msapplication-TileImage", content="/mstile-144x144.png")
+	meta(name="theme-color", content="#ffffff")
+
+
+	block title
+		title Default title
+
+	link(rel="stylesheet", href="/build/style/front.css", attr)
+
+	body(class=language.code + ' ' + page_class).loaded
+		// BEGIN BODY
+
+		unless cookiesEnabled
+			.cookies-message
+				.wrapper  This website uses cookies to ensure you get the best experience on our website.
+					.to-right
+						a(href="/cookies/enable").cookie-agree Got it
+						//- a(href="/cookies/disable").deny x
+
+		.main-wrapper
+			include parts/header.pug
+			//- pre
+			//- 	| !{ helpers.stringify(language) }
+			// BEGIN CONTENT
+
+
+			block content
+				h1 Main
+			// CONTENT EOF
+
+			include parts/footer.pug
+
+
+		block modal
+		.icon-load
+
+		// BODY EOF
+		script(src="/build/front.bundle.js")

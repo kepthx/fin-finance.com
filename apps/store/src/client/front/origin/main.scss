@@ -1,0 +1,381 @@
+// @import "~sass-web-fonts/_web-fonts";
+
+@import "./variables";
+
+@import "bourbon";
+@import "./buttons";
+@import "./style/grid-settings.scss";
+@import "neat";
+
+@import './banners';
+
+
+
+// https://github.com/penman/Sass-Web-Fonts
+
+@include font-face("Proxima Nova", "fonts/proximanova/ProximaNovaRegular/ProximaNovaRegular", $file-formats: eot ttf woff);
+@include font-face("Proxima Nova", "fonts/proximanova/ProximaNovaBold/ProximaNovaBold", bold, $file-formats: eot ttf woff);
+@include font-face("Proxima Nova", "fonts/proximanova/ProximaNovaBlack/ProximaNovaBlack", 800, $file-formats: eot ttf woff);
+
+
+@include font-face("Gotham Pro", "fonts/gothampro/GothamProRegular/GothamProRegular", $file-formats: eot ttf woff);
+@include font-face("Gotham Pro", "fonts/gothampro/GothamProBold/GothamProBold", bold, $file-formats: eot ttf woff);
+@include font-face("Gotham Pro", "fonts/gothampro/GothamProBlack/GothamProBlack", 800, $file-formats: eot ttf woff);
+
+
+
+
+// $web-fonts-protocol: "https";
+// $web-fonts-params: (subset: "latin");
+// $montserratFontUrl: web-fonts-url("Montserrat");
+//
+// @import url($montserratFontUrl);
+
+body {
+	font-family: $mainFont;
+	font-size: 14px;
+	position: relative;
+	padding-bottom: $footerHeight;
+	min-height: 100%;
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $headerFont;
+}
+
+
+a {
+	color: black;
+	transition: background-color .2s, color .2s;
+
+	&:hover {
+		color: $greyTextColor;
+		transition: background-color .2s, color .2s;
+	}
+}
+
+.logo img {
+	margin-left: -7px;
+}
+
+.logo {
+
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	@include span-columns(3);
+
+	.fn.org {
+		position: relative;
+		z-index: -1;
+	}
+
+	img {
+		margin-bottom: -25px;
+	}
+}
+
+.slogan {
+	color: $greyTextColor;
+	font-size: 12px;
+}
+
+
+header#top {
+
+	@include outer-container;
+	height: 108px;
+	padding-top: 32px;
+
+	.slogan {
+
+		@include span-columns(3);
+		padding-left: 22px;
+		margin-top: -1px;
+		line-height: 16px;
+	}
+
+	address {
+
+		font-style: normal;
+		padding-left: 34px;
+
+		@include span-columns(3);
+
+		.tel {
+			font-family: 'Gotham Pro', sans-serif;
+			font-weight: bold;
+
+			font-size: 24px;
+		    letter-spacing: 0.3px;
+
+			color: black;
+			text-decoration: none;
+			display: block;
+		}
+	}
+
+	nav {
+		@include span-columns(3);
+		@include omega();
+		text-align: right;
+		margin-top: -6px;
+
+		& > a {
+			margin-left: 14px;
+		}
+	}
+
+	.workhours {
+		color: #ffa106;
+		margin-left: 17px;
+		margin-top: 4px;
+		display: block;
+	}
+}
+
+
+.badge {
+
+	width: 23px;
+	line-height: 23px;
+	text-align: center;
+	border-radius: 23px;
+	display: inline-block;
+	position: absolute;
+	right: -8px;
+    top: -9px;
+	background: $greyLineColor;
+	font-size: 12px;
+    font-weight: bold;
+
+	&.red {
+		color: #fff;
+		background-color: $redColor;
+	}
+
+	&.gray {
+		color: #fff;
+		background-color: $greyLineColor;
+	}
+}
+
+.divider {
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-bottom: 1px solid $greyLineColor;
+}
+
+
+
+
+.item {
+
+	display: inline-block;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: "";
+		display: block;
+		height: 15px;
+		width: 100%;
+		bottom: -15px;
+	}
+
+	&:hover {
+		.dropdown {
+			visibility: visible;
+			z-index: 100;
+			opacity: 1;
+			transition: visibility 0.1s, opacity .3s;
+		}
+	}
+
+	.dropdown {
+
+		&:hover {
+			visibility: visible;
+			z-index: 100;
+		}
+
+	    border-radius: 3px;
+		background: white;
+		position: absolute;
+		box-shadow: 0 0 10px silver;
+	    margin-top: 15px;
+		left: -15px;
+		min-width: 192px;
+		opacity: 0;
+		transition: visibility 0.1s, opacity .2s, z-index .5s;
+		visibility: hidden;
+		z-index: -1000;
+		padding: 10px 0 10px;
+
+		.item {
+
+			width: 100%;
+			text-align: left;
+			padding: 5px 0;
+			padding: 8px 28px;
+			z-index: 10;
+			position: relative;
+			background-color: white;
+			text-decoration: none;
+			font-weight: bold;
+			&:hover {
+				// background-color: rgba(0, 0, 0, 0.02);
+			}
+
+			& > .button {
+				margin-right: 14px;
+			}
+		}
+
+		&::after {
+			background-color: white;
+			box-shadow: -2px -2px 7px 0 rgba(178, 178, 178, 0.4);
+			content: "\A0";
+			display: block;
+			height: 10px;
+			left: 35px;
+			position: absolute;
+			top: -5px;
+			transform: rotate(45deg);
+			width: 10px;
+			margin-left: -5px;
+		}
+	}
+}
+
+
+
+
+
+
+
+ nav#primary {
+	margin-top: 32px;
+	@include outer-container;
+	padding-left: 31px;
+
+	.item {
+		margin-right: 100px;
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: bold;
+	}
+}
+
+
+
+.region {
+
+	&.gray {
+		background-color: #f7f7f7;
+	}
+}
+
+main {
+	@include outer-container;
+	margin: 81px auto 150px;
+	article {
+		// @include span-columns(12);
+
+		& > header {
+			padding-left: 29px;
+		    font-size: 24px;
+		    line-height: 59px;
+			@include omega();
+		    margin-bottom: 53px;
+		}
+
+	}
+}
+
+
+footer {
+
+	padding-top: 84px;
+	height: $footerHeight;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+
+	.information {
+		@include outer-container;
+
+		.slogan {
+			margin-top: 11px;
+			line-height: 16px;
+		}
+	}
+
+	.copyright {
+		@include outer-container;
+		color: #bf0300;
+	    font-size: 12px;
+		line-height: 16px;
+		left: -1px;
+		word-spacing: 1.7px;
+	}
+
+	.divider {
+		margin: 28px 0 36px;
+	}
+
+	nav {
+		@include span-columns(4);
+		@include shift(1);
+
+		.column {
+			@include span-columns(2 of 4);
+
+		}
+
+		a {
+			text-decoration: none;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+	}
+
+	.payments {
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .language-selector {
+// 	text-decoration: none;
+// 	color: black;
+// 	font-weight: bold;
+// 	line-height: 36px;
+// 	width: 36px;
+// 	text-align: center;
+// 	display: inline-block;
+//
+// 	&.eng {
+// 		background:  url("langs/eng.png") 0 0 no-repeat;
+// 	}
+// }

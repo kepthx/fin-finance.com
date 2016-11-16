@@ -1,0 +1,116 @@
+// BEGIN HEADER
+header
+	.header-top
+		.wrapper
+			.header-left.clearfix
+				a.main-logo(href=helpers.url('front'))
+					img(src='/img/logo@2x.png', alt='')
+				p.slogan.hide-tablet #{__('Licensing of financial companies Sale of ready-made companies Legal support')}
+				a.button-menu(href='#')
+					span.button-menu__line
+					span.button-menu__line
+					span.button-menu__line
+
+
+			.header-right.clearfix
+				.box-phone
+					a.box-phone__phone(href='tell:+42022882341') #{__('+420 228 823 41')}
+					p.box-phone__time.hide-mobile #{__('Mon-Fri 8am-6pm EET')}
+				.header-right__right-bomile
+					.box-language.hide-500
+
+
+						a.box-language__link(href='#')
+							span(class=language.short.toLowerCase()).box-language__icon= language.short
+
+
+						.box-drop.js-list-language
+							.box-drop__cont
+								ul.list-languages
+									each langInfo, langKey in languages
+										li.list-languages__item
+											a.list-languages__link(href=helpers.languageLink(langKey))
+												span(class=langInfo.short.toLowerCase()).box-language__icon= langInfo.short
+												span.list-languages__name= langInfo.label
+
+
+					a.button-basket(href=helpers.url('user.cart')).shopping-cart
+						span.button-basket__icon
+						span.button-basket__number.basket-counter #{ basket.items.length }
+
+
+
+					if !user
+						a.button-login.hide-500(href=helpers.url('user.account.login')) #{__('Login')}
+
+
+					else
+						a.name-login.hide-500(href='/user/account.html').mobile
+							span.name-login__name
+								span.name-login__name-cont= user.email
+
+						ul.menu.user-menu
+							li.menu__item.with-drop
+								a.menu__link(href='#')
+									span.name-login.hide-500
+										span.name-login__name
+											span.name-login__name-cont= user.email
+
+								.drop-menu
+									.drop-menu__cont
+										ul.menu
+
+											li.menu__item
+												a.menu__link.account-icon(href='/user/account.html') #{__('Account')}
+
+											li.menu__item
+												a.menu__link.logout-icon(href='/user/logout') #{__('Logout')}
+	nav
+		.wrapper
+			unless user
+				a.button-login.for-mobile(href='/user/login.html')
+					| #{__('Login')}
+			else
+				a.button-account.account-icon.for-mobile(href='/user/account.html')
+					| #{__('Account')}
+				a.button-logout.logout-icon.for-mobile(href='/user/logout')
+					| #{__('Logout')}
+
+			ul.list-languages.for-mobile
+				each langInfo, langKey in languages
+					li.list-languages__item
+						a.list-languages__link(href=helpers.languageLink(langKey))
+							span(class=langInfo.short.toLowerCase()).box-language__icon= langInfo.short
+							span.list-languages__name= langInfo.label
+
+			ul.menu
+				li.menu__item.with-drop
+					a.menu__link(href='#') #{__('License')}
+					.drop-menu
+						.drop-menu__cont
+							ul.menu
+								li.menu__item
+									a.menu__link(href='/content/license/payment-service-provider.html') #{__('Payment Service Provider')}
+
+				li.menu__item.with-drop
+					a.menu__link(href='#') #{__('Our services')}
+					.drop-menu
+						.drop-menu__cont
+							ul.menu
+								li.menu__item
+									a.menu__link(href='/content/our-services/offshore-companies.html') #{__('Offshore companies')}
+								li.menu__item
+									a.menu__link(href='/content/our-services/card-issue.html') #{__('Card issue')}
+								li.menu__item
+									a.menu__link(href='/content/our-services/bank-account.html') #{__('Bank account')}
+								li.menu__item
+									a.menu__link(href='/content/our-services/merchant-account.html') #{__('Merchant account')}
+				li.menu__item
+					a.menu__link(href='/content/special-offers.html') #{__('Special offers')}
+				li.menu__item
+					a.menu__link(href='/content/faq.html') #{__('FAQ')}
+				li.menu__item
+					a.menu__link(href='/content/how-to-buy.html') #{__('Buying scheme')}
+				li.menu__item
+					a.menu__link(href='/content/contacts.html') #{__('Contacts')}
+// HEADER EOF

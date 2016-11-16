@@ -1,0 +1,347 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Special offers')} | Fintech Finance
+
+block content
+	.content#special_offers_page
+		.wrapper
+			h1 #{__('Special offers')}
+			.box-grid.box-grid_so.clearfix
+				.box-grid__column.col50.col100-tablet
+					.box-grid__item.item5.mh3
+						.box-grid__item-cont(same-height="one")
+							h3.box-grid__title.big
+								| #{__('Package for a quick')}
+								br
+								| #{__('business start')}
+							ul(class=(language.code === 'de' ? 'text-list-grid-min' : '')).text-list-grid
+								li.text-list-grid__item
+									| #{__('Ready-made Scottish LP with two nominal partners')}
+									br
+									|  #{__('and apostilled set of documents')}
+								//- li.text-list-grid__item #{__('Bank account (Czech Republic), personal presence')}
+								li.text-list-grid__item #{__('Bank account (Czech Republic), personal presence, opening within 14 business days')}
+
+
+							.box-grid__line-ptice.long
+								p.box-grid__price.big € 2 800
+								//- a(data-add-cart="").button.mw1.white(href='#') #{__('Add to cart')}
+								a.button.mw1.white.fancybox(href='#win_2') #{__('Select a bank and company')}
+
+
+
+				.box-grid__column.col50.col100-tablet
+					.box-grid__item.item6.mh3
+						.box-grid__item-cont(same-height="one")
+							h3.box-grid__title.big
+								| #{__('Package for')}
+								br
+								| #{__('online business')}
+							ul.text-list-grid
+								li.text-list-grid__item
+									| #{__('Ready-made Scottish LP with two nominal partners')}
+									br
+									|  #{__('and apostilled set of documents')}
+								//- li.text-list-grid__item #{__('Bank account (Czech Republic), personal presence')}
+								li.text-list-grid__item #{__('Bank account (Czech Republic), personal presence, opening within 14 business days')}
+								li.text-list-grid__item #{__('Merchant Account')}
+							.box-grid__line-ptice.long
+								p.box-grid__price.big € 3 100
+								//- a(data-add-cart="").button.mw1.white(href='#') #{__('Add to cart')}
+								a.button.mw1.white.fancybox(href='#win_3') #{__('Select a bank and company')}
+
+
+
+mixin popupStorefront(window_id, total_price)
+	.popup
+		.window-open(id=window_id)
+			form(name="storefront_" + window_id, id="storefront_" + window_id, action="/user/cart/add?destination=" + link.url, method="POST").window-open-cont.storefront
+				if block
+					block
+					ul.popup-list
+						li.popup-list__item
+							.popup-list__item-col.col-1
+								p.popup__price {{ totalPrice }}
+							.popup-list__item-col
+								button.popup-button #{__('Add to cart')}
+				else
+					h3 #{__('Empty Storefront')}
+
+block modal
+	+popupStorefront('win_2', 2200)
+		h3 #{__('Select a bank')}
+		ul.popup-list.three-column
+			li.popup-list__item.item_head
+				.popup-list__item-col.col-1
+					span #{__('Bank name')}
+				.popup-list__item-col.col-2
+					span #{__('Currencies')}
+				.popup-list__item-col.col-3
+					span #{__('State')}
+
+			each account in items['bank-account']
+				li.popup-list__item
+					.popup-list__item-col.col-1
+						label
+							input.js-styled(type='radio', name='items[0]', checked='', value=account.options[0].id, data-price=account.options[0].price)
+							span= account.title
+
+					.popup-list__item-col.col-2
+						span.hide-span Currencies
+						span= account.note
+
+					.popup-list__item-col.col-3
+						span.hide-span #{__('State')}
+						span.state-name= account.state
+
+
+
+		h3 #{__('Select a company')}
+		ul.popup-list
+			li.popup-list__item.item_head
+				.popup-list__item-col.col-1
+					span
+						| #{__('Company ')}
+						br
+						|  #{__('name')}
+				.popup-list__item-col.col-2
+					span
+						| #{__('Incorporation ')}
+						br
+						|  #{__('date')}
+				.popup-list__item-col.col-3
+					span #{__('Capital')}
+				.popup-list__item-col.col-4
+					span #{__('Notes')}
+
+			each company in items['offshore-companies']
+
+				li.popup-list__item
+					.popup-list__item-col.col-1
+						label
+							input.js-styled(type='radio', name='items[1]', checked='', value=company.options[0].id, data-price=company.options[0].price)
+							span= company.title
+
+					.popup-list__item-col.col-2
+						span.hide-span Incorporation date
+						span= company.incorporationDate
+
+					.popup-list__item-col.col-3
+						span.hide-span #{__('Capital')}
+						span= company.capital
+
+					.popup-list__item-col.col-4
+						span.hide-span #{__('Notes')}
+						span= company.note
+
+
+
+	+popupStorefront('win_3', 2500)
+		h3 #{__('Select a bank')}
+		input(type="hidden", name="items[2]", value=items['merchant-account'][0].options[0].id, data-price=items['merchant-account'][0].options[0].price)
+		ul.popup-list.three-column
+			li.popup-list__item.item_head
+				.popup-list__item-col.col-1
+					span #{__('Bank name')}
+				.popup-list__item-col.col-2
+					span #{__('Currencies')}
+				.popup-list__item-col.col-3
+					span #{__('State')}
+
+			each account in items['bank-account']
+				li.popup-list__item
+					.popup-list__item-col.col-1
+						label
+							input.js-styled(type='radio', name='items[0]', checked='', value=account.options[0].id, data-price=account.options[0].price)
+							span= account.title
+
+					.popup-list__item-col.col-2
+						span.hide-span Currencies
+						span= account.note
+
+					.popup-list__item-col.col-3
+						span.hide-span #{__('State')}
+						span.state-name= account.state
+
+
+
+		h3 #{__('Select a company')}
+		ul.popup-list
+			li.popup-list__item.item_head
+				.popup-list__item-col.col-1
+					span
+						| #{__('Company ')}
+						br
+						|  #{__('name')}
+				.popup-list__item-col.col-2
+					span
+						| #{__('Incorporation ')}
+						br
+						|  #{__('date')}
+				.popup-list__item-col.col-3
+					span #{__('Capital')}
+				.popup-list__item-col.col-4
+					span #{__('Notes')}
+
+			each company in items['offshore-companies']
+
+				li.popup-list__item
+					.popup-list__item-col.col-1
+						label
+							input.js-styled(type='radio', name='items[1]', checked='', value=company.options[0].id, data-price=company.options[0].price)
+							span= company.title
+
+					.popup-list__item-col.col-2
+						span.hide-span Incorporation date
+						span= company.incorporationDate
+
+					.popup-list__item-col.col-3
+						span.hide-span #{__('Capital')}
+						span= company.capital
+
+					.popup-list__item-col.col-4
+						span.hide-span #{__('Notes')}
+						span= company.note
+
+
+
+	//- .popup
+	//- 	#win_2.window-open
+	//- 		.window-open-cont
+	//- 			h3 #{__('Select a bank')}
+	//- 			form
+	//- 				ul.popup-list.three-column
+	//- 					li.popup-list__item.item_head
+	//- 						.popup-list__item-col.col-1
+	//- 							span #{__('Bank name')}
+	//- 						.popup-list__item-col.col-2
+	//- 							span #{__('Currencies')}
+	//- 						.popup-list__item-col.col-3
+	//- 							span #{__('State')}
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group1', checked='')
+	//- 								span
+	//- 									| KB Komercni
+	//- 									br
+	//- 									|  Banka
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span Currencies
+	//- 							span CZK,USD,EUR, RUB, GBP, CHF, JPY, CAD, SEK
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span #{__('State')}
+	//- 							span.state-name Czech Republic
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group1')
+	//- 								span Ceska Sporitelna
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span #{__('Currencies')}
+	//- 							span CZK,USD,EUR, GBP, CHF, JPY, CAD, SEK
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span #{__('State')}
+	//- 							span.state-name Czech Republic
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group1')
+	//- 								span UniCredit Bank
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span Currencies
+	//- 							span CZK,USD,EUR, GBP, CHF, JPY, CAD, SEK
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span State
+	//- 							span.state-name Czech Republic
+	//-
+	//-
+	//-
+	//-
+	//- 				h3 #{__('Select a company')}
+	//- 				ul.popup-list
+	//- 					li.popup-list__item.item_head
+	//- 						.popup-list__item-col.col-1
+	//- 							span
+	//- 								| #{__('Company ')}
+	//- 								br
+	//- 								|  #{__('name')}
+	//- 						.popup-list__item-col.col-2
+	//- 							span
+	//- 								| #{__('Incorporation ')}
+	//- 								br
+	//- 								|  #{__('date')}
+	//- 						.popup-list__item-col.col-3
+	//- 							span #{__('Capital')}
+	//- 						.popup-list__item-col.col-4
+	//- 							span #{__('Notes')}
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group2', checked='')
+	//- 								span Precious Invest Capital Trading Ltd
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span Incorporation date
+	//- 							span 01.06.2016
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span #{__('Capital')}
+	//- 							span € 1 000 000
+	//- 						.popup-list__item-col.col-4
+	//- 							span.hide-span #{__('Notes')}
+	//- 							span
+	//- 								| #{__('From the data we have gathered, the company was created in 2013-05-15 and has been overseen by four directors')}
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group2')
+	//- 								span Precious Invest Capital Trading Ltd
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span #{__('Incorporation date')}
+	//- 							span 01.06.2016
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span #{__('Capital')}
+	//- 							span € 1 000 000
+	//- 						.popup-list__item-col.col-4
+	//- 							span.hide-span #{__('Notes')}
+	//- 							span
+	//- 								| #{__('From the data we have gathered, the company was created in 2013-05-15 and has been overseen by four directors')}
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group2')
+	//- 								span #{__('Precious Invest Capital Trading Ltd')}
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span #{__('Incorporation date')}
+	//- 							span 01.06.2016
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span #{__('Capital')}
+	//- 							span € 1 000 000
+	//- 						.popup-list__item-col.col-4
+	//- 							span.hide-span #{__('Notes')}
+	//- 							span
+	//- 								| #{__('From the data we have gathered, the company was created in 2013-05-15 and has been overseen by four directors')}
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							label
+	//- 								input.js-styled(type='radio', name='group2')
+	//- 								span #{__('Precious Invest Capital Trading Ltd')}
+	//- 						.popup-list__item-col.col-2
+	//- 							span.hide-span #{__('Incorporation date')}
+	//- 							span 01.06.2016
+	//- 						.popup-list__item-col.col-3
+	//- 							span.hide-span #{__('Capital')}
+	//- 							span € 1 000 000
+	//- 						.popup-list__item-col.col-4
+	//- 							span.hide-span #{__('Notes')}
+	//- 							span
+	//- 								| #{__('From the data we have gathered, the company was created in 2013-05-15 and has been overseen by four directors')}
+	//-
+	//-
+	//-
+	//- 					li.popup-list__item
+	//- 						.popup-list__item-col.col-1
+	//- 							p.popup__price € 2 200
+	//- 						.popup-list__item-col
+	//- 							a.popup-button(href='#') #{__('Add to cart')}

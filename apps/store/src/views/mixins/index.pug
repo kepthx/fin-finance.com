@@ -1,0 +1,12 @@
+mixin form(name)
+	form(method=method, action=action, name=name, id=name + '-form')&attributes(attributes)
+		input(type="hidden", name="form_id", value=forms[name].id)
+		if block
+			block
+
+
+mixin form_errors(form = {errors: {}})
+	if form.errors && Object.keys(form.errors).length
+		.worning-form
+			each error in form.errors
+				p #{ __(error) }

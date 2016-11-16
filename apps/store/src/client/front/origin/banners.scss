@@ -1,0 +1,105 @@
+
+#frontpage {
+
+	.right {
+		@include span-columns(8 of 12);
+	}
+}
+
+.banner {
+
+	color: white;
+	padding: 37px 35px;
+
+	header {
+
+		h1, h2, h3, h4, h5, h6 {
+			padding: 0;
+			margin: 0;
+		}
+
+		font-size: 12px;
+		word-spacing: 3px;
+		margin-bottom: -5px;
+	    line-height: 23px;
+	}
+
+	.divider {
+	    margin: 21px 40px 24px 4px;
+	}
+
+	& > p {
+		margin-left: 2px;
+		line-height: 18px;
+	}
+
+	&.special_offers {
+		height: 952px;
+		background: #fff url("./banners/special_offers_big.png") 0 0 no-repeat;
+		@include span-columns(4);
+		position: relative;
+		left: -2px;
+	}
+
+	&.payment_service {
+		background: #fff url("./banners/payment_service_big.png") 0 0 no-repeat;
+		@include span-columns(4 of 8);
+		height: 346px;
+		margin-bottom: 18px;
+	}
+
+	&.bank_account {
+		background: #fff url("./banners/bank_account_big.png") 0 0 no-repeat;
+		@include span-columns(4 of 8);
+		@include omega();
+		height: 346px;
+		margin-bottom: 18px;
+	    background-position: 35px 203px;
+	}
+
+	&.offshore_companies {
+		background: #fff url("./banners/offshore_companies_big.png") 0 0 no-repeat;
+		@include span-columns(8 of 8);
+		@include omega();
+		height: 348px;
+		margin-bottom: 19px;
+	}
+
+	&.merchant_account, &.card_issue {
+		@include span-columns(4 of 8);
+		height: 221px;
+	}
+
+	&.card_issue {
+		@include omega();
+	}
+
+	&.simple {
+		color: black;
+		border: 1px solid $greyTextColor;
+		border-radius: 2px;
+
+		p {
+			color: $greyTextColor;
+		}
+	}
+
+	.price {
+		font-weight: bold;
+		font-family: $headerFont;
+		font-size: 19px;
+	    float: left;
+	    margin-left: 2px;
+	    font-style: italic;
+	    letter-spacing: -0.3px;
+	    margin-right: 22px;
+	}
+
+	.button {
+		position: relative;
+	    top: -9px;
+	    width: 126px;
+	    text-align: center;
+	    letter-spacing: 0.6px;
+	}
+}

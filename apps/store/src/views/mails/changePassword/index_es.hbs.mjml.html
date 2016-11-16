@@ -1,0 +1,25 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Cambia la contraseña</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+					<mj-image align="left" width="268" src="{{publicUrl}}/img/logo@2x.png" mj-class="logo"></mj-image>
+					<mj-text mj-class="h1">
+						Cambia la contraseña
+					</mj-text>
+					<mj-text  mj-class="bold">Este correo electrónico ha sido enviado a la que solicitó a establecer una nueva contraseña</mj-text>
+					<mj-text  mj-class="text">Por favor, haga clic en el enlace. Si el enlace no se abre, copiarlo en el navegador.</mj-text>
+
+					<mj-link href="{{ changePasswordLink }}"  mj-class="link link-pad">{{ changePasswordLink }}</mj-link>
+
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

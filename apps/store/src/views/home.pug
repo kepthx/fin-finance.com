@@ -1,0 +1,101 @@
+//- index.pug
+extends layout.pug
+
+block title
+	title  #{__('Payment Institutions. Ready-made companies. Bank accounts.')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1
+				| #{__('Payment Institutions.')}
+				br
+				| #{__('Ready-made companies. Bank accounts.')}
+				//- | #{__('Obtaining licenses')}
+				//- br
+				//- | #{__('for fintech business in Europe')}
+
+			.box-grid.box-grid_main.clearfix
+				.box-grid__column.column1
+					.box-grid__item.item1.mh2
+						.box-grid__item-cont
+							h3.box-grid__title #{__('Special offers')}
+							p.box-grid__text
+								| #{__('Special offers include a package')}
+								br
+								| #{__('of basic services and a range of')}
+								|     #{__('additional services')}
+							.box-grid__line-ptice
+								p.box-grid__price #{__('from')} €2800
+								a.button.white(href='/content/special-offers.html') #{__('Details')}
+				.box-grid__column.two-col
+
+					.box-grid__column.col50.top
+						.box-grid__item.item2.mh1
+							.box-grid__item-cont
+								h3.box-grid__title
+									| #{__('Payment Service')}
+									br
+									| #{__('Provider (PSP) licenses')}
+								.box-grid__line-ptice
+									p.box-grid__price #{__('from')} €15000
+									a.button.white(href='/content/license/payment-service-provider.html') #{__('Details')}
+
+
+					.box-grid__column.col100.col100_hide
+						.box-grid__item.item4.mh1
+							.box-grid__item-cont
+								h3.box-grid__title
+									| #{__('Offshore companies')}
+									br
+									| #{__('English LLP with two nominal partners')}
+								.box-grid__line-ptice
+									p.box-grid__price #{__('from')} €1400
+									a.button.white(href='/content/our-services/offshore-companies.html') #{__('Details')}
+
+
+					.box-grid__column.col50.top
+						.box-grid__item.item3.mh1.white.item3_with-img1
+							.box-grid__item-cont
+								h3.box-grid__title #{__('Bank account')}
+								p.box-grid__text #{__('Opening a bank account in Europe')}
+								.box-grid__line-ptice.top
+									p.box-grid__price.box-grid__price1000 #{__('from')} €1500
+									a.button(href='/content/our-services/bank-account.html') #{__('Details')}
+
+
+					.box-grid__column.col100.col100_hide-mob
+						.box-grid__item.item4.mh1
+							.box-grid__item-cont
+								h3.box-grid__title
+									| #{__('Offshore companies')}
+									br
+									| #{__('English LLP with two nominal partners')}
+								.box-grid__line-ptice
+									p.box-grid__price #{__('from')} €1400
+									a.button.white(href='/content/our-services/offshore-companies.html') #{__('Details')}
+
+
+
+					.box-grid__column.col50.bottom
+						.box-grid__item.item3.white
+							.box-grid__item-cont
+								h3.box-grid__title #{__('Merchant account')}
+								p.box-grid__text #{__('Opening a merchant account for VISA, MasterCard and American Express cards')}
+								.box-grid__line-ptice
+									p.box-grid__price #{__('from')} €300
+									a.button(href='/content/our-services/merchant-account.html') #{__('Details')}
+
+
+
+					.box-grid__column.col50.bottom
+						.box-grid__item.item3.white
+							.box-grid__item-cont
+								h3.box-grid__title #{__('Card issue')}
+								p.box-grid__text
+									| #{__('Assistance in issuing')}
+									br
+									| #{__('MasterCard and VISA bank cards')}
+								.box-grid__line-ptice.box-grid__line-ptice_mod
+									a.button(href='/content/our-services/card-issue.html') #{__('Details')}

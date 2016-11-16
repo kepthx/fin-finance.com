@@ -1,0 +1,148 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Opening a bank account for a company')} | Fintech Finance
+
+
+mixin bankAccount(item)
+
+	li.list-bank__item
+
+		.list-bank__logo
+			a(href='#')
+				img(src=item.logo, alt='')
+
+		a.list-bank__title(href='#')= item.title
+
+		.line-currency
+			| #{__('Currencies')}: CZK,
+			span.line-currency__active USD
+			| ,
+			span.line-currency__active EUR
+			| ,
+			span.line-currency__active RUB
+			| , GBP, CHF, JPY, CAD, SEK
+
+
+
+		if item.options && item.options.length
+			form(action="/user/cart/add?destination=" + link.url , method="POST", name="storefront_" + item.id, id="storefront_" + item.id).storefront
+				ul.list-radio.for-bank
+					each option in item.options
+						li.list-radio__item
+							label.left
+								input.js-styled(type='radio', name='items', value=option.id, checked="", data-price=option.price)
+								span.list-radio__name
+									| #{__(option.description)}
+
+									//- unless language.code !== 'ru'
+									//- 	| #{__(option.description)}
+									//- else
+									//- 	| #{ option.description }
+									//- TODO REMOVE i18n wrapper!!!!
+
+							span.list-bank__ptice #{helpers.formatPrice(option.price)}
+
+			button.button.top2(form="storefront_" + item.id) #{__('Add to cart')}
+
+
+block content
+	.content
+		.wrapper
+			h1
+				| #{__('Bank account in Europe')}
+				br
+				| #{__('for legal entities and individuals')}
+
+			.box-bank
+
+				.box-bank__line-title
+					h2.mini-title #{__('Opening a bank account for a company')}
+					p #{__('We open accounts only for companies purchased from us')}
+						br
+						| - #{__('Bank account is opened within three business days in case of remote opening')}
+						br
+						| - #{__('Bank account is opened within 14 business days in case of personal presence')}
+
+
+					//- p Мы открываем банковские счета только на компании приобретенные у нас
+					//- 	br
+					//- 	| — Открытие банковского счета в течении трех бизнес дней при дистанционном открытии
+					//- 	br
+					//- 	| — Открытие банковского счета в течении 14 бизнес дней при персональном присутствии
+
+					//- p.text-title —  #{__('opening within three days')}
+
+
+				ul.list-bank
+					+bankAccount(items['sku_006'])
+					+bankAccount(items['sku_004'])
+					+bankAccount(items['sku_005'])
+					+bankAccount(items['sku_015'])
+
+
+
+
+					//- li.list-bank__item
+					//- 	.list-bank__logo
+					//- 		a(href='#')
+					//- 			img(src='/img/logo_bank_2.png?ver1.0', alt='')
+					//- 	a.list-bank__title(href='#') #{__('Ceska Sporitelna')} (#{__('Czech Republic')})
+					//- 	.line-currency
+					//- 		| #{__('Currencies')}: CZK,
+					//- 		span.line-currency__active USD
+					//- 		| ,
+					//- 		span.line-currency__active EUR
+					//- 		| , GBP, CHF, JPY, CAD, SEK
+					//-
+					//-
+					//- 	form(action="/user/cart/add?destination=" + link.url , method="POST", name="storefront_02", id="storefront_02")
+					//- 		ul.list-radio.for-bank
+					//- 			li.list-radio__item
+					//- 				label.left
+					//- 					input.js-styled(type='radio', name='items', value="sku_002", checked="")
+					//- 					span.list-radio__name
+					//- 						| #{__('Personal presence')}
+					//- 				span.list-bank__ptice € 1 000
+					//-
+					//- 	button.button.top2(form="storefront_01") #{__('Add to cart')}
+					//-
+					//-
+					//-
+					//-
+					//- li.list-bank__item
+					//- 	.list-bank__logo
+					//- 		a(href='#')
+					//- 			img(src='/img/logo_bank_4.png?ver1.0', alt='')
+					//- 	a.list-bank__title(href='#') #{__('UniCredit Bank')} (#{__('Czech Republic')})
+					//- 	.line-currency
+					//- 		| #{__('Currencies')}: CZK,
+					//- 		span.line-currency__active USD
+					//- 		| ,
+					//- 		span.line-currency__active EUR
+					//- 		| , GBP, CHF, JPY, CAD, SEK
+					//- 	form(action="/user/cart/add?destination=" + link.url , method="POST", name="storefront_02", id="storefront_03")
+					//- 		ul.list-radio.for-bank
+					//- 			li.list-radio__item
+					//- 				label.left
+					//- 					input.js-styled(type='radio', name='items', value="sku_003", checked="")
+					//- 					span.list-radio__name
+					//- 						| #{__('Personal presence')}
+					//- 				span.list-bank__ptice € 1 000
+					//- 			li.list-radio__item
+					//- 				label.left
+					//- 					input.js-styled(type='radio', name='items', value="sku_004", checked="")
+					//- 					span.list-radio__name
+					//- 						| #{__('Remote opening')}
+					//- 				span.list-bank__ptice € 2 000
+					//- 	button.button.top2(form="storefront_01") #{__('Add to cart')}
+
+			if language.code == 'en'
+				include langs/en
+			else if language.code == 'es'
+				include langs/es
+			else if language.code == 'ru'
+				include langs/ru
+			else if language.code == 'de'
+				include langs/de

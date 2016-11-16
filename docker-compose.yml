@@ -1,0 +1,64 @@
+version : '2'
+services :
+
+    web:
+        image: nginx:1.11.3-alpine
+        restart: always
+        ports:
+            - "80:80"
+            - "443:443"
+
+        volumes:
+            - ./config/nginx/html:/usr/share/nginx/html
+            - ./config/nginx/conf.d:/etc/nginx/conf.d/
+            - ./config/nginx/ssl:/etc/nginx/ssl/
+
+        volumes_from:
+            - web_app:ro
+
+        links:
+            - web_app
+
+
+
+    app_consul:
+        image: consul
+
+
+
+    web_app:
+        build: ./apps/store
+        restart: always
+
+        depends_on:
+            - redis
+            - rethinkdb
+
+        links:
+            - rethinkdb
+            - redis
+
+        volumes:
+            - build-data:/node_app/src/build
+            - node-modules:/node_app/src/node_modules
+
+        ports:
+            - 3030:3030
+
+
+    rethinkdb:
+        image: 'rethinkdb:latest'
+        restart: always
+        volumes:
+            - "./data/rethinkdb:/data"
+
+    redis:
+        image: redis:3.2.3-alpine
+        restart: always
+        volumes:
+            - './data/redis:/data'
+
+
+volumes:
+    build-data: {}
+    node-modules: {}

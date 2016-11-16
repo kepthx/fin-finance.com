@@ -1,0 +1,127 @@
+app:
+    name : fintech_store
+    proxy: true
+
+user:
+    salt_round: 10
+
+
+
+http2:
+    enable: false
+    options:
+        key: './ssl/test.key'
+        cert: './ssl/test.crt'
+
+
+# https://github.com/nodemailer/nodemailer-smtp-transport
+mailer:
+    smtp:
+        # host: 'smtp.yandex.ru'
+        # port: 465
+        service: 'Yandex'
+        auth:
+            user: 'noreplay@westtrade.tk'
+            pass: '1234321'
+
+email:
+    from: '"WESTTRADE NOREPLAY noreplay@westtrade.tk"'
+    to :
+        # contactsForm: 'me@westtrade.tk'
+        contactsForm: 'xalurezi@rootfest.net'
+
+
+# https://github.com/trentm/node-bunyan
+logger:
+    name: fintech_market
+
+# https://github.com/koajs/generic-session/blob/master/lib/session.js#L41
+session:
+    key: PHPSESSID
+    # allowEmpty: true
+    allowEmpty: false
+    rolling: false
+    defer: false
+    # cookie:
+    #     maxAge: 20000
+
+webpack:
+    output:
+        publicPath: http://91.192.62.236:3030/build/
+
+# https://thinky.io/documentation/api/thinky/
+database:
+    # host : 'rethinkdb'
+    # host : '45e7e71ca7b7'
+    host : 'rethinkdb'
+    db : 'store'
+
+# https://www.npmjs.com/package/redis#options-is-an-object-with-the-following-possible-properties
+redis-cache:
+    host : 'redis'
+
+# just nodejs http.server address
+http :
+    port: 3030
+    hostname: localhost
+    keys:
+        - brandon
+        - cats
+        - starships
+
+views:
+    extension: pug
+    cache: false
+
+static:
+    - ./public
+
+# https://github.com/primus/primus
+websocket:
+    transformer : uws
+    # transformer : engine.io
+    parser: msgpack
+
+# https://www.npmjs.com/package/koa-locale
+locale:
+    param_name: 'lang'
+    default: 'en'
+
+languages :
+    en :
+        label: English
+        short: Eng
+    de :
+        label: Deutsch
+        short: Ger
+    es :
+        label: Español
+        short: Esp
+    ru :
+        label: Русский
+        short: Rus
+
+admin:
+    link: '/admin/dashboard'
+    accounts :
+        - hello@fin-finance.com:UWkjEfgr9pJRYPhS
+
+# https://www.npmjs.com/package/koa-i18n-2
+i18n:
+
+    directory: public/locales
+    locales:
+        - en
+        - de
+        - es
+        - ru
+
+    modes:
+        # - subdomain         # subdomain   - `zh-CN.*.com`
+        # - url               # url         - `/en`
+        - query             # querystring - `/?locale=en-US`
+        - cookie            # cookie      - `Cookie: locale=zh-TW`
+        - header            # header      - `Accept-Language: zh-CN,zh;q=0.5`
+
+
+        # - tld               # tld(the last domain) - `*.cn`

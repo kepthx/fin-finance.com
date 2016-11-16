@@ -1,0 +1,140 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Ready-made companies')} #{__('for the success of your business')} | Fintech Finance
+
+block content
+	.content
+		.wrapper
+			h1
+				| #{__('Ready-made companies')}
+				br
+				| #{__('for the success of your business')}
+
+			.box-grid.opt3.clearfix
+				.box-grid__column.col50.col100-tablet2
+					.box-grid__item.item11.mh6
+						.box-grid__item-cont
+							h3.box-grid__title.changed
+								| #{__('Ready-made Scottish LP with two nominal')}
+								br
+								|  #{__('partners and apostilled set of documents')}
+							ul.text-list-grid
+
+								if language.code === 'es'
+									li.text-list-grid__item tiempo de registro: 5 días, entrega de documentos: 3 días
+								else
+									li.text-list-grid__item #{__('delivery of document in three days')}
+
+								li.text-list-grid__item #{__('taxation report is not required')}
+								li.text-list-grid__item #{__('closed register of companies')}
+							.box-grid__line-ptice.long.ptice_rms
+								p.box-grid__price.big € 1 400
+
+								if 'Scottish LP' in items && items['Scottish LP'].length
+									a.button.mw1.white.fancybox(href='#win_1') #{__('Select a ready-made company')}
+								else
+									a.box-grid__item-button(href='#') #{__('Not available')}
+
+
+				.box-grid__column.col50.col100-tablet2
+					.box-grid__item.item10.mh6
+						.box-grid__item-cont
+							h3.box-grid__title.changed
+								| #{__('Ready-made English LLP with two nominal')}
+								br
+								|  #{__('partners and apostilled set of documents')}
+							ul.text-list-grid
+								li.text-list-grid__item #{__('delivery of document in three days')}
+								li.text-list-grid__item #{__('taxation report delivery once a year')}
+								li.text-list-grid__item #{__('open register of companies')}
+							.box-grid__line-ptice.long.ptice_rms
+								p.box-grid__price.big € 1 400
+								if 'English LLP' in items && items['English LLP'].length
+									a.button.mw1.white.fancybox(href='#win_2') #{__('Select a ready-made company')}
+								else
+									a.box-grid__item-button(href='#') #{__('Not available')}
+
+
+			if language.code === 'en'
+				include langs/en
+			else if language.code === 'es'
+				include langs/es
+			else if language.code === 'ru'
+				include langs/ru
+			else if language.code === 'de'
+				include langs/de
+
+
+
+mixin popupCatalog(items_list, window_id)
+	.popup
+		.window-open(id=window_id)
+			form(name="storefront_" + window_id, id="storefront_" + window_id, ng-controller="storefrontController as storefront" action="/user/cart/add?destination=" + link.url, method="POST").window-open-cont.storefront
+				ul.popup-list
+					li.popup-list__item.item_head
+						.popup-list__item-col.col-1
+							span
+								unless language.code === 'ru'
+									| Company
+									br
+									|  name
+								else
+									| Название
+									br
+									|  компании
+						.popup-list__item-col.col-2
+							span
+								unless language.code === 'ru'
+									| Incorporation date
+								else
+									| Дата создания
+
+
+						.popup-list__item-col.col-3
+							span #{__('Capital')}
+
+
+						.popup-list__item-col.col-4
+							unless language.code === 'ru'
+								| Notes
+							else
+								| Примечания
+
+					each item in items_list
+
+						li.popup-list__item
+
+							.popup-list__item-col.col-1
+								label
+									input.checkbox_popup.styled(type='checkbox', name='items', value=item.options[0].id, data-price=item.options[0].price)
+									span= item.title
+
+							.popup-list__item-col.col-2
+								span.hide-span #{__('Incorporation date')}
+								span= item.incorporationDate
+
+							.popup-list__item-col.col-3
+								span.hide-span #{__('Capital')}
+								span= item.capital
+
+							.popup-list__item-col.col-4
+								span.hide-span #{__('Notes')}
+								span= item.note
+
+					li.popup-list__item
+
+						.popup-list__item-col.col-1
+							p.popup__price {{ totalPrice }}
+
+
+						.popup-list__item-col
+							button.popup-button #{__('Add to cart')}
+
+block modal
+	if 'Scottish LP' in items && items['Scottish LP'].length
+		+popupCatalog(items['Scottish LP'], 'win_1')
+
+	if 'English LLP' in items && items['English LLP'].length
+		+popupCatalog(items['English LLP'], 'win_2')

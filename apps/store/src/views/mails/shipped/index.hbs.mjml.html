@@ -1,0 +1,41 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Your order #{{ orderId }} has shipped</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+					<mj-image src="{{publicUrl}}/img/logo@2x.png" mj-class="logo"></mj-image>
+					<mj-text mj-class="h1">
+						Your order #{{ orderId }} has shipped
+					</mj-text>
+					<mj-text  mj-class="bold">Shipping carrier: <span style="color: #b91516;">{{ carrier }}</span></mj-text>
+					<mj-text  mj-class="bold">Tracking number:  <span style="color: #b91516;">{{ tracking_number }}</span></mj-text>
+					<mj-text  mj-class="text">You can track your package on-line</mj-text>
+
+					<mj-link href="{{ tracking_link }}" mj-class="link">{{ tracking_link }}</mj-link>
+
+					<mj-spacer height="41" />
+
+					<mj-text mj-class="h2">Order details</mj-text>
+					{{#each orders}}
+						<mj-text mj-class="bold">{{inc @index}}. {{title}}</mj-text>
+						<mj-text mj-class="note">{{note}}</mj-text>
+						<mj-text mj-class="price">{{price}}</mj-text>
+						<mj-spacer height="10" />
+						<mj-divider mj-class="br" />
+					{{/each}}
+
+					<mj-text mj-class="big price">
+						{{total}}
+					</mj-text>
+
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

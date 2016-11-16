@@ -1,0 +1,101 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Contacts')} | Fintech Finance
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Contacts')}
+			.box-form-reg.for-contacts
+
+				if forms.contacts.isSuccess
+					.column-form
+						.box-form__cont
+							.worning-form.long
+								p #{__('Sent!')}.
+
+
+				else
+					form(role="form", action="/content/contacts.html", method="POST", name='contactsForm', id='contactsForm').column-form
+						input(type="hidden", name="form_id", value=forms.contacts.id)
+						.box-form__cont
+
+							.box-field
+								label #{__('Name')}
+								.box-field__input
+									input.standart-input(type='text', class=forms.contacts.errors.fullName ? 'error' : '', value=forms.contacts.data.fullName, placeholder='', name="fullName")
+									//- span(class=contactsForm.errors.fullName ? 'show' : 'hide').error
+									//- 	if (contactsForm.errors.fullName)
+									//- 		| #{__(contactsForm.errors.fullName)}
+
+
+							.box-field
+								label #{__('E-mail')} *
+								.box-field__input
+									input.standart-input(type='text', class=forms.contacts.errors.email ? 'error' : '', value=forms.contacts.data.email, placeholder='', name="email")
+									//- span(class=contactsForm.errors.email ? 'show' : 'hide').error
+									//- 	if (contactsForm.errors.email)
+									//- 		| #{__(contactsForm.errors.email)}
+
+							.box-field
+								label #{__('Phone')} *
+								.box-field__input
+									input.standart-input(type='text', class=forms.contacts.errors.phone ? 'error' : '', value=forms.contacts.data.phone, placeholder='', name="phone")
+									//- span(class=contactsForm.errors.phone ? 'show' : 'hide').error
+									//- 	if (contactsForm.errors.phone)
+									//- 		| #{__(contactsForm.errors.phone)}
+
+
+							.box-field
+								label #{__('Theme')} *
+								.box-field__input
+									select.standart-input(type='text', class=forms.contacts.errors.theme ? 'error' : '', value=forms.contacts.data.theme, placeholder='', name="theme").js-styled
+										option(value='psp') #{__('PSP')}
+										option(value='rmc') #{__('Ready-made companies')}
+										option(value='ba') #{__('Bank account')}
+										option(value='ma') #{__('Merchant account')}
+										option(value='other') #{__('Other')}
+
+									//- span(class=contactsForm.errors.phone ? 'show' : 'hide').error
+									//- 	if (contactsForm.errors.phone)
+									//- 		| #{__(contactsForm.errors.phone)}
+
+
+
+							.box-field
+								label #{__('Text')}
+								.box-field__input
+									textarea(name="text", class=forms.contacts.errors.text ? 'error' : '').standart-input= forms.contacts.data.text
+									//- span(class=contactsForm.errors.text ? 'show' : 'hide').error
+									//- 	if (contactsForm.errors.text)
+									//- 		| #{__(contactsForm.errors.text)}
+
+							.line-buttons-form
+								input.button.button_form(type='submit', value=__('Send'))
+
+
+							.worning-form.long
+								p #{__('Fields marked with an asterisk are required')}
+								if forms.contacts.errors && Object.keys(forms.contacts.errors).length
+									each error in forms.contacts.errors
+										p #{__(error)}
+
+				.column-form.column-contacts
+					.box-contacts
+						.box-contacts__item
+							p.box-contacts__label #{__('Phone')}
+							p.box-phone__time #{__('Mon-Fri 8am-6pm EET')}
+							a.box-phone__phone(href='tell:+42022882341') #{__('+420 228 823 41')}
+
+						//- .box-contacts__item
+						//- 	p.box-contacts__label #{__('Mail')}
+						//- 	a.link-mail(href='#') hello@fin-finance.com
+
+						.box-contacts__item
+							p.box-contacts__label #{__('Address')}
+							p.box-contacts__address
+								| #{__('Praha City Center')},
+								br
+								| #{__('Klimentska 46, 110 02 Prague')}

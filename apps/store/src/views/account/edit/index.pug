@@ -1,0 +1,49 @@
+//- index.pug
+extends ../../layout.pug
+
+block title
+	title #{__('Personal account')} | Fintech Finanace
+
+
+block content
+	.content
+		.wrapper
+			h1 #{__('Personal account')}
+
+			include ../parts/nav
+
+			.box-form-private-office
+				form(name="personal-account-edit-form", id="personal-account-edit-form", action="/user/account/edit.html", method="post").column-form
+					.box-form__cont
+						h2 #{__('Edit personal details')}
+
+						.line-fields
+
+							.box-field.w50.hide-mobile
+								label #{__('First name')}
+								.box-field__input
+									input.standart-input(type='text', class=personalAccountEditForm.errors.first ? 'error' : '', placeholder='', name="first", value=userInfo.profile.first)
+
+
+							.box-field.w50.right.hide-mobile
+								label #{__('Last name')}
+								.box-field__input
+									input.standart-input(type='text', class=personalAccountEditForm.errors.last ? 'error' : '', placeholder='', name="last", value=userInfo.profile.last)
+
+						.box-field
+							label #{__('E-mail')}
+							.box-field__input
+								input.standart-input(type='text', class=personalAccountEditForm.errors.email ? 'error' : '', placeholder='', name="email", value=userInfo.profile.email)
+
+						.box-field
+							label #{__('Phone')}
+							.box-field__input
+								input.standart-input(type='text', class=personalAccountEditForm.errors.phone ? 'error' : '', placeholder='', name="phone", value=userInfo.profile.phone)
+
+						if personalAccountEditForm.errors && Object.keys(personalAccountEditForm.errors).length
+							.worning-form
+								each error in personalAccountEditForm.errors
+									p #{__(error)}
+
+						.line-buttons-form
+							input.button.button_form(type='submit', value=__('Save'))

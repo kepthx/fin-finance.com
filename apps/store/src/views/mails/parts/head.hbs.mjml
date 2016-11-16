@@ -1,0 +1,97 @@
+<mj-font name="GothamPro" href="{{ publicUrl }}/fonts/gothamPro.css" />
+<mj-font name="ProximaNova" href="{{ publicUrl }}/fonts/proximaNova.css" />
+
+<mj-attributes>
+
+	<mj-all font-size="18"/>
+	<mj-text
+		font-size="18"
+		font-family="ProximaNova, Arial, sans-serif"
+		color="#000"
+		line-height="20px"/>
+
+	<mj-container width="670px"/>
+	<mj-class name="h1"
+		font-family="GothamPro, Helvetica"
+		font-weight="900"
+		font-size="40px"
+		line-height="40px"
+		padding-bottom="63px"/>
+
+	<mj-class name="h2"
+		color="#b91516"
+		font-family="ProximaNova, Arial, sans-serif"
+		font-weight="700"
+		font-size="24px"
+		line-height="24px"/>
+
+	<mj-class name="text" color="#9a9999" font-family="ProximaNova, Arial, sans-serif"/>
+
+	<mj-class name="logo"
+		align="left"
+		width="268"
+		padding-top="70px"
+		padding-bottom="17px"/>
+
+	<mj-class name="red" color="#b91516"/>
+
+	<mj-class name="bold" font-weight="bold"/>
+
+
+	<mj-class name="link-pad" padding-left="13px"/>
+
+	<mj-class name="link"
+	 	color="#000"
+		font-size="18px"
+		line-height="24px"
+		font-family="ProximaNova, Arial, sans-serif"
+		padding-top="5px"
+		padding-bottom="0"
+		text-decoration="underline"
+		text-transform="none"
+		/>
+
+	<mj-class name="price"
+		font-weight="bold"
+		font-style="italic"
+		font-family="GothamPro, Arial, sans-serif"  />
+
+	<mj-class name="phone"
+		font-weight="bold"
+		font-family="GothamPro, Arial, sans-serif"  />
+
+	<mj-class name="big"
+		font-weight="bold"
+		font-size="30px"
+		line-height="34px"
+		padding-top="17px"
+		padding-bottom="20px"  />
+
+	<mj-class name="note" color="#9a9999" font-size="14px" line-height="20px" />
+	<mj-class name="label" color="#9a9999" font-size="14px" padding-bottom="5px"/>
+	<mj-class name="secondary"
+		color="#9a9999"
+		line-height="30px"
+		font-size="18px"
+		padding-bottom="5px"
+		/>
+
+	<mj-class name="br" padding-top="20"
+		width="92%"
+		padding-bottom="10px"
+		padding-left="0"
+		padding-right="0"
+		border-width="1px"
+		border-color="#d7d6d6" />
+
+
+	<mj-class name="button"
+		 border-radius="25px"
+		 align="left"
+		 font-size="13px"
+		 inner-padding="12px 50px"
+		 background-color="#c70001"
+		 color="white"
+	 />
+
+</mj-attributes>

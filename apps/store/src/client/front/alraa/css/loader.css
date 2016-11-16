@@ -1,0 +1,3 @@
+.loaded .main-wrapper{visibility:hidden;}
+.icon-load{background:url('../img/loader_x2.gif') no-repeat left top;width:80px;height:80px;position:fixed;left:50%;top:50%;margin-top:-40px;margin-left:-40px;display:none;}
+.loaded .icon-load{display:block;}

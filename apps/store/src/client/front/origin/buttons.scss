@@ -1,0 +1,88 @@
+@import "./variables";
+
+
+@mixin country-button($lang) {
+
+	&.#{$lang} {
+		background:  url("langs/" + $lang +  ".png") 0 0 no-repeat;
+		font-weight: bold;
+		padding: 0;
+		border: none;
+
+		&:hover {
+			background-color: white;
+		}
+	}
+}
+
+.button {
+
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
+
+	cursor: pointer;
+
+
+	position: relative;
+
+	border: 1px solid $greyLineColor;
+	line-height: 36px;
+	height: 36px;
+
+	border-radius: 36px;
+    padding: 0 17px;
+
+	transition: background-color .2s, color .2s;
+
+	&.circled {
+		padding: 0;
+		width: 36px;
+		text-align: center;
+		border-radius: 36px;
+	}
+
+	@include country-button(en);
+	@include country-button(es);
+	@include country-button(ru);
+	@include country-button(de);
+
+	&.icon {
+		.icon {
+			margin-left: 14px;
+		}
+	}
+
+	&:hover {
+		transition: background-color .2s, color .2s;
+	}
+
+
+	&.inverted {
+
+		color: white;
+
+		&:hover {
+			background-color: white;
+			color: black;
+		}
+	}
+
+	&.yellow {
+		border-color: $yellowColor;
+		color: $yellowColor;
+
+		&:hover {
+
+			color: white;
+			background-color: $yellowColor;
+
+		}
+	}
+}
+
+.lnr.icon {
+	font-size: 18px;
+	position: relative;
+	top: 3px;
+}

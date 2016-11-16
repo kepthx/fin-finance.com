@@ -1,0 +1,31 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Usted pide #{{ orderId }}</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+
+					<mj-image src="{{publicUrl}}/img/logo@2x.png" mj-class="logo"></mj-image>
+					<mj-text mj-class="h1">Usted pide #{{ orderId }}</mj-text>
+					<mj-text mj-class="h2">Detalles del pedido</mj-text>
+					<mj-spacer height="21" />
+					{{#each orders}}
+						<mj-text mj-class="bold">{{inc @index}}. {{title}}</mj-text>
+						<mj-text mj-class="note">{{note}}</mj-text>
+						<mj-text mj-class="price">{{price}}</mj-text>
+						<mj-spacer height="10" />
+						<mj-divider mj-class="br" />
+					{{/each}}
+					<mj-text mj-class="big price">{{total}}</mj-text>
+					<mj-text mj-class="red">Especialista se pondrá en contacto con usted dentro de 30 minutos.</mj-text>
+					
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

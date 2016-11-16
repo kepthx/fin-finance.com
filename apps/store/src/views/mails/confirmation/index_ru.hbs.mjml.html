@@ -1,0 +1,40 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Подтверждение регистрации</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+
+					<mj-image mj-class="logo" src="{{publicUrl}}/img/logo@2x.png"></mj-image>
+					<mj-text mj-class="h1">
+						Подтверждение регистрации
+					</mj-text>
+					<mj-text mj-class="h2">
+						Благодарим Вас за присоединение к Fintech Finance!
+					</mj-text>
+					<mj-text mj-class="secondary">
+						Пожалуйста, нажмите на кнопку или нажмите на ссылку, чтобы завершить регистрацию.
+						<br />
+						Обратите внимание, что неподтвержденная учетная запись будет удалена через 10 дней.
+					</mj-text>
+					<mj-button href="{{ confirmationLink  }}" mj-class="button">
+						Подтвердить
+					</mj-button>
+					<mj-spacer height="20" />
+					<mj-text mj-class="secondary">
+						Если ссылка не открывается, скопируйте ее в адресную строку браузера
+					</mj-text>
+					<mj-text mj-class="link">
+						{{ confirmationLink  }}
+					</mj-text>
+
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>

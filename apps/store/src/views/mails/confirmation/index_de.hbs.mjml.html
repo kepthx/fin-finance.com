@@ -1,0 +1,41 @@
+<mjml>
+	<mj-head>
+		{{> head }}
+		<mj-title>Registrier ungsbestätigung</mj-title>
+	</mj-head>
+	<mj-body>
+		<mj-container>
+			<mj-section>
+				<mj-column>
+
+
+					<mj-image mj-class="logo" src="{{publicUrl}}/img/logo@2x.png"></mj-image>
+					<mj-text mj-class="h1">
+						Registrier ungsbestätigung
+					</mj-text>
+					<mj-text mj-class="h2">
+						Wir bedanken uns herzlich, dass Sie sich für Fintech Finance entschieden haben!
+					</mj-text>
+					<mj-text mj-class="secondary">
+						Klicken Sie bitte auf den Button oder den angeführten Link, um die Registrierung abzuschließen.
+						<br />
+						Bitte beachten Sie, dass unbestätigte Konten nach 10 Tagen gelöscht werden.
+					</mj-text>
+					<mj-button href="{{ confirmationLink  }}" mj-class="button">
+						Bestätigen
+					</mj-button>
+					<mj-spacer height="20" />
+					<mj-text mj-class="secondary">
+						Sollte sich der Link nicht öffnen, fügen Sie ihn in die Adresszeile Ihres Browsers ein.
+					</mj-text>
+					<mj-text mj-class="link">
+						{{ confirmationLink  }}
+					</mj-text>
+
+					{{> footer }}
+
+				</mj-column>
+			</mj-section>
+		</mj-container>
+	</mj-body>
+</mjml>
