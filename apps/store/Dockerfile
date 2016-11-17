@@ -1,5 +1,5 @@
 # FROM mhart/alpine-node:latest
-FROM node:latest
+FROM node:6.9.1
 
 WORKDIR /node_app/src
 ADD . /node_app/src
