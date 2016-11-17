@@ -2,7 +2,7 @@
 
 require('./style.scss');
 require('font-awesome/css/font-awesome.css');
-require('rdash-ui/dist/rdash.css');
+require('rdash-ui/dist/css/rdash.css');
 
 const angular = require('angular');
 const angularCookies = require('angular-cookies');

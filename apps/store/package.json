@@ -99,7 +99,7 @@
     "spdy": "^3.4.4",
     "thinky": "^2.3.6",
     "uuid": "^2.0.3",
-    "uws": "^0.9.0",
+    "uws": "^0.11.0",
     "validate.js": "^0.10.0",
     "weakmap-polyfill": "^2.0.0",
     "webpack-bundle-size-analyzer": "^2.2.0",
