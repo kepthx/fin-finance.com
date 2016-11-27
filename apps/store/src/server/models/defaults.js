@@ -123,17 +123,17 @@ let defaultItems = [
 		capital : '€ 1 000 000',
 		options : [{ price : '1400' }]
 	},
-	{
-		id : 'sku_014',
-		title: 'Precious Invest Capital Trading Ltd',
-		note : 'From the data we have gathered, the company was created in 2013-05-15 and has been overseen by four directors',
-		language : 'en',
-		section : 'offshore-companies',
-		category : 'English LLP',
-		incorporationDate : '01.06.2016',
-		capital : '€ 1 000 000',
-		options : [{ price : '1300' }]
-	},
+	// {
+	// 	id : 'sku_014',
+	// 	title: 'Precious Invest Capital Trading Ltd',
+	// 	note : 'From the data we have gathered, the company was created in 2013-05-15 and has been overseen by four directors',
+	// 	language : 'en',
+	// 	section : 'offshore-companies',
+	// 	category : 'English LLP',
+	// 	incorporationDate : '01.06.2016',
+	// 	capital : '€ 1 000 000',
+	// 	options : [{ price : '1300' }]
+	// },
 	{
 		id : 'sku_015',
 		title: 'Raiffeisen bank (Czech Republic)',
@@ -146,6 +146,26 @@ let defaultItems = [
 	},
 ];
 
+[
+	'fro plus trading lp',
+	'fro plus commerce lp',
+	'dfa trading plus lp',
+	'bazr trading lp',
+	'bazr commerce lp',
+	'dfa commerce lp'
+].forEach((title, i) => {
+	defaultItems.push({
+		id: `sku_${('002' + i).slice(-3)}`,
+		title,
+		note: 'apostilled set of documents, two nominal offshore partners',
+		language: 'en',
+		section : 'offshore-companies',
+		category : 'Scottish LP',
+		incorporationDate : '27.10.2016',
+		capital : '£ 100',
+		options : [{ price : '1400' }]
+	});
+});
 
 let userList = [
 

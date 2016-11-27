@@ -2,7 +2,7 @@
 extends ../../layout.pug
 
 block title
-	title #{__('Ready-made companies')} #{__('for the success of your business')} | Fintech Finance
+	title #{__('Ready-made companies')} #{__('for your business')} | Fintech Finance
 
 block content
 	.content
@@ -10,16 +10,16 @@ block content
 			h1
 				| #{__('Ready-made companies')}
 				br
-				| #{__('for the success of your business')}
+				| #{__('for your business')}
 
 			.box-grid.opt3.clearfix
 				.box-grid__column.col50.col100-tablet2
 					.box-grid__item.item11.mh6
 						.box-grid__item-cont
 							h3.box-grid__title.changed
-								| #{__('Ready-made Scottish LP with two nominal')}
+								| #{__('Ready-made Scotland LP')}
 								br
-								|  #{__('partners and apostilled set of documents')}
+								|  #{__('with two offshore partners and apostille')}
 							ul.text-list-grid
 
 								if language.code === 'es'
@@ -42,9 +42,9 @@ block content
 					.box-grid__item.item10.mh6
 						.box-grid__item-cont
 							h3.box-grid__title.changed
-								| #{__('Ready-made English LLP with two nominal')}
+								| #{__('Ready-made English LLP')}
 								br
-								|  #{__('partners and apostilled set of documents')}
+								|  #{__('with two offshore partners and apostille')}
 							ul.text-list-grid
 								li.text-list-grid__item #{__('delivery of document in three days')}
 								li.text-list-grid__item #{__('taxation report delivery once a year')}
@@ -54,8 +54,8 @@ block content
 								if 'English LLP' in items && items['English LLP'].length
 									a.button.mw1.white.fancybox(href='#win_2') #{__('Select a ready-made company')}
 								else
-									a.box-grid__item-button(href='#') #{__('Not available')}
-
+									//- a.box-grid__item-button(href='#') #{__('Not available')}
+									a.button.white(href='#') #{__('currently unavailable')}
 
 			if language.code === 'en'
 				include langs/en

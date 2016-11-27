@@ -31,6 +31,7 @@ let buildItem = (ctx, currentItem) => {
 			result[name] = value;
 		}
 
+		console.log(result, field, defaultFields)
 		return result;
 
 	}, {});

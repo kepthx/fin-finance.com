@@ -244,8 +244,8 @@
 	"Purchase scheme": "Purchase scheme",
 	"Added to cart": "Added to cart",
 	"We open accounts only for companies purchased from us": "We open accounts only for companies purchased from us",
-	"Bank account is opened within three business days in case of remote opening": "Bank account is opened within three business days in case of remote opening",
-	"Bank account is opened within 14 business days in case of personal presence": "Bank account is opened within 14 business days in case of personal presence",
+	"Bank account is opened within 15 business days in case of remote opening": "Bank account is opened within 15 business days in case of remote opening",
+	"Bank account is opened within 20 business days in case of personal presence": "Bank account is opened within 20 business days in case of personal presence",
 	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Bank account (Czech Republic), personal presence, opening within 14 business days",
 	"Remember Me": "Remember Me",
 	"Account": "Account",
@@ -265,5 +265,11 @@
 	" We've sent an email to %s. Click the link in the email to reset your password. If you don't see the email, check other places it might be, like your junk, spam, social, or other folders.": " We've sent an email to %s. Click the link in the email to reset your password. If you don't see the email, check other places it might be, like your junk, spam, social, or other folders.",
 	"Page not found": "Page not found",
 	"Page doesn't exist": "Page doesn't exist",
-	"return to home": "return to home"
+	"return to home": "return to home",
+	"Our partners": "Our partners",
+	"for your business": "for your business",
+	"Ready-made Scotland LP": "Ready-made Scotland LP",
+	"with two offshore partners and apostille": "with two offshore partners and apostille",
+	"Ready-made English LLP": "Ready-made English LLP",
+	"currently unavailable": "currently unavailable"
 }

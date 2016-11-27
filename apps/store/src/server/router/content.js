@@ -8,6 +8,10 @@ module.exports = router => {
 		yield this.render('pages/faq');
 	});
 
+	router.get('content.partners', '/content/partners.html', function* () {
+		yield this.render('pages/partners');
+	});
+
 	router.get('content.kyc', '/content/kyc.html', function* () {
 		yield this.render('pages/kyc');
 	});

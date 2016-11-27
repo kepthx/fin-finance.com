@@ -102,7 +102,7 @@
 	"from the market experts": "от экспертов рынка",
 	"Assistance with opening of EU merchant account for accepting credit card payments on your website": "Открытие merchant account в ЕС",
 	"Opening period one week": "время открытия - одна неделя",
-	"Ready-made companies": "Готовые офшорные компании",
+	"Ready-made companies": "Готовые компании",
 	"for the success of your business": "для вашего успешного бизнеса",
 	"partners and apostilled set of documents": "с двумя номинальными партнерами и апостилем",
 	"delivery of document in three days": "доставка документов три дня",
@@ -233,8 +233,8 @@
 	"Added to cart": "Добавлено в корзину",
 	"Purchase scheme": "Схема покупки",
 	"We open accounts only for companies purchased from us": "Мы открываем счета только на компании приобретенные у нас",
-	"Bank account is opened within three business days in case of remote opening": "Открытие банковского счета в течении трех бизнес дней при дистанционном открытии",
-	"Bank account is opened within 14 business days in case of personal presence": "Открытие банковского счета в течении 14 бизнес дней при персональном присутствии",
+	"Bank account is opened within 15 business days in case of remote opening": "Открытие банковского счета в течении 15 бизнес дней при дистанционном открытии",
+	"Bank account is opened within 20 business days in case of personal presence": "Открытие банковского счета в течении 20 бизнес дней при персональном присутствии",
 	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Банковский счет (Чешская Республика), персональное присутствие,открытие в течение 14 бизнес дней",
 	"Remember Me": "Запомнить меня",
 	"We use cookies in order to personalize website content and analyze traffic on our website.": "We use cookies in order to personalize website content and analyze traffic on our website.",
@@ -267,5 +267,12 @@
 	"Cannot read property 'form' of undefined": "Cannot read property 'form' of undefined",
 	"An error occured during the write": "An error occured during the write",
 	"User.get(...).changePassword is not a function": "User.get(...).changePassword is not a function",
-	"Page doesn't exist": "Page doesn't exist"
+	"Page doesn't exist": "Page doesn't exist",
+	"Our partners": "Наши партнеры",
+	"English LLP with two offshore partners": "English LLP with two offshore partners",
+	"for your business": "для вашего бизнеса",
+	"Ready-made Scotland LP": "Готовое Шотландское LP",
+	"with two offshore partners and apostille": "с двумя оффшорными партнерами и апостилем",
+	"Ready-made English LLP": "Готовое Английское LLP",
+	"currently unavailable": "сейчас недоступно"
 }

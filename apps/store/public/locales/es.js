@@ -102,7 +102,7 @@
 	"from the market experts": "los expertos del mercado",
 	"Assistance with opening of EU merchant account for accepting credit card payments on your website": "Apertura de merchant account en la UE",
 	"Opening period one week": "tiempo de apertura: una semana",
-	"Ready-made companies": "Compañías offshore previamente",
+	"Ready-made companies": "Compañías previamente constituidas",
 	"for the success of your business": "constituidas para su negocio exitoso",
 	"Ready-made Scottish LP with two nominal": "LP escocesa previamente constituida con dos socios nominales y un pliego",
 	"partners and apostilled set of documents": "de documentos apostillados",
@@ -193,8 +193,8 @@
 	"Purchase scheme": "Esquema de compra",
 	"Added to cart": "Added to cart",
 	"We open accounts only for companies purchased from us": "Abrimos las cuentas solo para compañías adquiridas a nosotros",
-	"Bank account is opened within three business days in case of remote opening": "Apertura de la cuenta bancaria en el transcurso de tres días hábiles con la apertura remota",
-	"Bank account is opened within 14 business days in case of personal presence": "Apertura de la cuenta bancaria en el transcurso de 14 días hábiles con la presencia personal",
+	"Bank account is opened within 15 business days in case of remote opening": "Apertura de la cuenta bancaria en el transcurso de 15 días hábiles con la apertura remota",
+	"Bank account is opened within 20 business days in case of personal presence": "Apertura de la cuenta bancaria en el transcurso de 20 días hábiles con la presencia personal",
 	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Cuenta bancaria (República Checa), presencia personal, apertura en el transcurso de 14 días hábiles",
 	"Remember Me": "Remember Me",
 	"Account": "Account",
@@ -215,5 +215,11 @@
 	"Page dosn't exist": "Page dosn't exist",
 	"Return to home": "Return to home",
 	"Page doesn't exist": "Page doesn't exist",
-	"return to home": "return to home"
+	"return to home": "return to home",
+	"Our partners": "Nuestros socios",
+	"for your business": "para su negocio",
+	"Ready-made Scotland LP": "LP escocesa previamente constituida",
+	"with two offshore partners and apostille": "con dos socios de offshore y apostilla",
+	"Ready-made English LLP": "LLP inglesa previamente constituid",
+	"currently unavailable": "ahora es inaccesible"
 }
