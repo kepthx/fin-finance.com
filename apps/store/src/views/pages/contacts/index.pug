@@ -84,10 +84,10 @@ block content
 
 				.column-form.column-contacts
 					.box-contacts
-						.box-contacts__item
-							p.box-contacts__label #{__('Phone')}
-							p.box-phone__time #{__('Mon-Fri 8am-6pm EET')}
-							a.box-phone__phone(href='tell:+42022882341') #{__('+420 228 823 41')}
+						//- .box-contacts__item
+						//- 	p.box-contacts__label #{__('Phone')}
+						//- 	p.box-phone__time #{__('Mon-Fri 8am-6pm EET')}
+						//- 	a.box-phone__phone(href='tell:+42022882341') #{__('+420 228 823 41')}
 
 						//- .box-contacts__item
 						//- 	p.box-contacts__label #{__('Mail')}
@@ -96,6 +96,17 @@ block content
 						.box-contacts__item
 							p.box-contacts__label #{__('Address')}
 							p.box-contacts__address
-								| #{__('Praha City Center')},
+								//- | #{__('Praha City Center')},
+								//- br
+								//- | #{__('Klimentska 46, 110 02 Prague')}
+								| Floor 2
 								br
-								| #{__('Klimentska 46, 110 02 Prague')}
+								| Nádražní 344/23
+								br
+								| Prague 5
+								br
+								| Prague
+								br
+								| 150 00
+								br
+								| Czech Republic

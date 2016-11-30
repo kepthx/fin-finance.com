@@ -48,7 +48,7 @@
 	"Creating a company with a Payment Service Provider license": "Gründung des Unternehmens mit einer Payment Service Provider Lizenzr",
 	"assistance in obtaining": "Hilfe beim Lizenzerwerb",
 	"legal advice": "Rechtsberatung",
-	"Name": "Vor-und Nachname",
+	"Name": "Name",
 	"E-mail": "E-Mail",
 	"Phone": "Telefon",
 	"Text about": "Frage/Anliegen",
@@ -180,7 +180,6 @@
 	"User with this combination of login and password dosn't exists": "User with this combination of login and password dosn't exists",
 	"Field `Login` can't be blank": "Field `Login` can't be blank",
 	"How to buy": "How to buy",
-	"Fields marked with an sterisk are required": "Fields marked with an sterisk are required",
 	"Resend confirmation email": "Resend confirmation email",
 	"Documents": "Documents",
 	"Logout": "Ausloggen",
@@ -196,7 +195,7 @@
 	"We open accounts only for companies purchased from us": "Wir eröffnen Kontos nur für die Unternehmen, die bei uns angeschafft sind",
 	"Bank account is opened within 15 business days in case of remote opening": "Ferneröffnung eines Bankkontos innerhalb von 15 Arbeitstagen",
 	"Bank account is opened within 20 business days in case of personal presence": "Eröffnung eines Bankkontos innerhalb von 20 Arbeitstagenmit persönlicher Anwesenheit",
-	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Bankkonto (Tschechische Republik), persönliche Anwesenheit, Eröffnung innerhalb von 14 Werktagen",
+	"Bank account , personal presence, opening within 20 business days": "Bankkonto, persönliche Anwesenheit, Eröffnung innerhalb von 20 Werktagen",
 	"Remember Me": "Remember Me",
 	"Account": "Account",
 	"We use cookies in order to personalize website content and analyze traffic on our website.": "We use cookies in order to personalize website content and analyze traffic on our website.",
@@ -239,5 +238,7 @@
 	"Ready-made Scotland LP": "Vorgegründete Schottische LP",
 	"with two offshore partners and apostille": "mit zwei Offshore-Partnern und Apostille",
 	"Ready-made English LLP": "Vorgegründete Englische LLP",
-	"currently unavailable": "Derzeit nicht verfügbar"
+	"currently unavailable": "Derzeit nicht verfügbar",
+	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Bank account (Czech Republic), personal presence, opening within 14 business days",
+	"apostilled set of documents, two nominal offshore partners": "Apostilliertes Dokumentenpaket, zwei nominale Offshore-Partner"
 }

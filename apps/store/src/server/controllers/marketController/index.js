@@ -31,7 +31,6 @@ let buildItem = (ctx, currentItem) => {
 			result[name] = value;
 		}
 
-		console.log(result, field, defaultFields)
 		return result;
 
 	}, {});
@@ -298,6 +297,7 @@ module.exports = {
 			;
 
 		this.state.items = items.reduce(storeItemCategoryReducer(this), {});
+		console.log(this.state.items)
 		yield this.render('pages/rmc');
 	}
 };

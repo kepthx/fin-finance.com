@@ -101,7 +101,7 @@ block content
 							input.button.button_form(type='submit', value=__('Create new account'))
 
 						.worning-form
-							p #{ __('Fields marked with an sterisk are required') }
+							p #{ __('Fields marked with an asterisk are required') }
 							if forms.registration.errors && Object.keys(forms.registration.errors).length
 								each error in forms.registration.errors
 									p #{ __(error) }

@@ -221,7 +221,6 @@
 	"Confirm": "Confirm",
 	"If the link doesn’t open, copy it into your browser": "If the link doesn’t open, copy it into your browser",
 	"If you have any questions please contact for number": "If you have any questions please contact for number",
-	"Fields marked with an sterisk are required": "Fields marked with an sterisk are required",
 	"Cannot read property 'request' of undefined": "Cannot read property 'request' of undefined",
 	"Theme": "Theme",
 	"Cannot match against 'undefined' or 'null'.": "Cannot match against 'undefined' or 'null'.",
@@ -246,7 +245,7 @@
 	"We open accounts only for companies purchased from us": "We open accounts only for companies purchased from us",
 	"Bank account is opened within 15 business days in case of remote opening": "Bank account is opened within 15 business days in case of remote opening",
 	"Bank account is opened within 20 business days in case of personal presence": "Bank account is opened within 20 business days in case of personal presence",
-	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Bank account (Czech Republic), personal presence, opening within 14 business days",
+	"Bank account , personal presence, opening within 20 business days": "Bank account , personal presence, opening within 20 business days",
 	"Remember Me": "Remember Me",
 	"Account": "Account",
 	"We use cookies in order to personalize website content and analyze traffic on our website.": "We use cookies in order to personalize website content and analyze traffic on our website.",
@@ -271,5 +270,7 @@
 	"Ready-made Scotland LP": "Ready-made Scotland LP",
 	"with two offshore partners and apostille": "with two offshore partners and apostille",
 	"Ready-made English LLP": "Ready-made English LLP",
-	"currently unavailable": "currently unavailable"
+	"currently unavailable": "currently unavailable",
+	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Bank account (Czech Republic), personal presence, opening within 14 business days",
+	"apostilled set of documents, two nominal offshore partners": "apostilled set of documents, two nominal offshore partners"
 }
