@@ -226,5 +226,6 @@
 	"Field `Phone` can't be blank": "Field `Phone` can't be blank",
 	"Field `E-mail` is not a valid email": "Field `E-mail` is not a valid email",
 	"Sent!": "Sent!",
-	"apostilled set of documents, two nominal offshore partners": "Juego de documentos apostillados, dos socios nominales de offshore"
+	"apostilled set of documents, two nominal offshore partners": "Juego de documentos apostillados, dos socios nominales de offshore",
+	"English LLP with two offshore partners": "English LLP with two offshore partners"
 }

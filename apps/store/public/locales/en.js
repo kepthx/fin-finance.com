@@ -272,5 +272,6 @@
 	"Ready-made English LLP": "Ready-made English LLP",
 	"currently unavailable": "currently unavailable",
 	"Bank account (Czech Republic), personal presence, opening within 14 business days": "Bank account (Czech Republic), personal presence, opening within 14 business days",
-	"apostilled set of documents, two nominal offshore partners": "apostilled set of documents, two nominal offshore partners"
+	"apostilled set of documents, two nominal offshore partners": "apostilled set of documents, two nominal offshore partners",
+	"English LLP with two offshore partners": "English LLP with two offshore partners"
 }
